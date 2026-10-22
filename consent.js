@@ -1,5 +1,6 @@
 /* Veritas Hospitality Advisors: cookie consent for Google Analytics (GA4).
-   Google Analytics loads only after the visitor clicks "Accept". Declining, or not choosing, sets no analytics cookies.
+   The Google tag is in every page's <head> in a consent-denied state (Google Consent Mode). Clicking "Accept" switches analytics_storage to granted.
+   Declining, or not choosing, sets no analytics cookies.
    The choice is stored in this browser (localStorage key "veritas_consent") and can be changed from the Privacy Policy page. */
 (function () {
   'use strict';
@@ -20,20 +21,17 @@
   function loadGA() {
     if (window.__veritasGALoaded) return;
     window.__veritasGALoaded = true;
-    window['ga-disable-' + GA_ID] = false;
     if (isLocal) { window.__veritasGAWouldLoad = true; return; } // never send test traffic from a local preview
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    document.head.appendChild(s);
+    window['ga-disable-' + GA_ID] = false;
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', GA_ID);
+    if (!window.gtag) { window.gtag = function () { window.dataLayer.push(arguments); }; }
+    window.gtag('consent', 'update', { analytics_storage: 'granted' });
   }
 
   function clearGACookies() {
     window['ga-disable-' + GA_ID] = true;
+    window.__veritasGALoaded = false;
+    if (window.gtag) { window.gtag('consent', 'update', { analytics_storage: 'denied' }); }
     var names = ['_ga', '_ga_' + GA_ID.replace('G-', ''), '_gid', '_gat'];
     var host = location.hostname.split('.');
     var domains = [location.hostname, '.' + location.hostname];
