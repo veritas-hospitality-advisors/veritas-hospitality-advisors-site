@@ -1,0 +1,57 @@
+﻿# Veritas Hospitality Advisors
+
+> Profit-focused hospitality consulting and independent hotel owner advisory for India. Veritas works only for independent hotel and resort owners — reviewing commercial performance, operational governance and owner reporting. It does not operate hotels and takes no commissions from OTAs, vendors or brands. Founded by Vaishakh Surendran.
+
+Contact: vaishakh@veritashospitalityadvisors.in · +91 90722 33008 · Registered in Kerala, India; works with owners across India.
+
+## Core pages
+
+- [Home](https://veritashospitalityadvisors.in/): overview, mandate, engagement model and FAQ
+- [Founder — Vaishakh Surendran](https://veritashospitalityadvisors.in/founder.html): 25+ years in hospitality across India, the Maldives, Kuwait and the USA; General Manager roles since 2015; awards and credentials
+- [Clients](https://veritashospitalityadvisors.in/clients.html): current engagement — Sanskreti The Heritage, Kumbalanghi, Kochi
+- [Perspectives](https://veritashospitalityadvisors.in/insights.html): articles for independent hotel owners
+- [Hotel owner FAQ](https://veritashospitalityadvisors.in/faq.html): 100 direct answers on owner governance, financial control, remote advisory, revenue, GOP, OTAs, brands and contracts, opening, turnaround, F&B, AI and city-level demand in India
+
+## Services
+
+- [Commercial Performance](https://veritashospitalityadvisors.in/commercial-performance.html): pricing and yield, OTA channel mix, benchmarking, demand segmentation, forecasting
+- [Operational Governance](https://veritashospitalityadvisors.in/operational-governance.html): standards (LSOP) audit, manpower analysis, cost control, procurement review, service quality
+- [Owner Reporting & Value](https://veritashospitalityadvisors.in/owner-reporting.html): revenue dashboards, monthly P&L summaries, GOP analysis, action plans
+
+## Tools
+
+- [Hotel Performance Diagnostic](https://veritashospitalityadvisors.in/diagnostic.html): 15-question owner self-assessment
+- [Hotel Profit Health Check](https://veritashospitalityadvisors.in/health-check.html): estimate revenue yield, OTA cost drag and three profit gaps
+- [Owner's Oversight Playbook (PDF)](https://veritashospitalityadvisors.in/owner-playbook.pdf): 15 frameworks for independent hotel owners
+
+## Perspectives
+
+- [The 64,118-key question for independent hotels](https://veritashospitalityadvisors.in/perspectives/competition.html)
+- [India’s domestic travel boom is not a room-night forecast](https://veritashospitalityadvisors.in/perspectives/demand.html)
+- [A booking channel can bring revenue and still disappoint the owner](https://veritashospitalityadvisors.in/perspectives/distribution.html)
+- [The Indian wedding boom should be judged by contribution](https://veritashospitalityadvisors.in/perspectives/events.html)
+- [New tourism infrastructure does not arrive on your opening date](https://veritashospitalityadvisors.in/perspectives/infrastructure.html)
+- [India’s hotel market is strong. That is not the same as your hotel being profitable.](https://veritashospitalityadvisors.in/perspectives/market-reality.html)
+- [What your OTA contract is actually costing you — and why your P&L may not show it](https://veritashospitalityadvisors.in/perspectives/ota-cost.html)
+- [The seven numbers every hotel owner and GM should review each month](https://veritashospitalityadvisors.in/perspectives/owner-report.html)
+- [Pilgrimage demand calls for an operating plan, not only a higher tariff](https://veritashospitalityadvisors.in/perspectives/pilgrimage.html)
+- [What a 144,000-room pipeline actually tells a hotel owner](https://veritashospitalityadvisors.in/perspectives/pipeline.html)
+- [Five-star rates in the headlines, a different decision at your desk](https://veritashospitalityadvisors.in/perspectives/pricing.html)
+- [RevPAR is not the metric your hotel needs. Here is what to track instead.](https://veritashospitalityadvisors.in/perspectives/revpar.html)
+- [When inbound travel softens, know which guests you actually rely on](https://veritashospitalityadvisors.in/perspectives/source-markets.html)
+- [Sustainability in Indian hotels: from operational practice to formal certification](https://veritashospitalityadvisors.in/perspectives/sustainability-hotel-india.html)
+- [What owner alignment actually looks like in practice](https://veritashospitalityadvisors.in/perspectives/vaishakh-interview.html)
+
+## Founder
+
+- [Resume](https://veritashospitalityadvisors.in/vaishakh-resume.html) · [PDF](https://veritashospitalityadvisors.in/vaishakh-resume.pdf)
+- [LinkedIn](https://www.linkedin.com/in/vaishakhsurendran/)
+
+## Media
+
+- [Hospitality News India — interview](https://hospitalitynews.in/news/people-first-always-vaishakh-surendrans-vision-for-lyfe-hotels-bhubaneswar)
+- [Hotelier India — Lyfe Hotels Bhubaneswar appointment](https://www.hotelierindia.com/appointments/lyfe-hotels-bhubaneswar-welcomes-vaishakh-surendran-as-general-manager)
+
+## Optional
+
+- [Full context for AI systems](https://veritashospitalityadvisors.in/llms-full.txt)

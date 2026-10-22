@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll) build settings.
+# Internal working files stay in the repo but are not published to the site.
+exclude:
+  - CLAUDE.md
+  - build_playbook.py
+  - reports/
+  - research_notes/
+  - _config.yml
