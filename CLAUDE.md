@@ -37,7 +37,7 @@
 
 - **The live site is https://veritashospitalityadvisors.in** (GitHub Pages from `main`, custom domain). Every canonical, og/twitter image, JSON-LD id, sitemap, robots and llms URL must use this domain. **Never use `aisearch-global.github.io`**: it was the staging address and caused wrong share thumbnails and AI answers citing it.
 - The repository moved to `github.com/veritas-hospitality-advisors/veritas-hospitality-advisors-site`. Work only in a fresh clone of that repo; older clones have a different history.
-- `mailto:` links and form endpoints deliberately stay on the `.com` address (the client keeps both domains; `.in` is a catch-all to the same mailbox). The visible text shows `.in`. Do not change the link targets without the client's confirmation.
+- **CANONICAL RULE (Viv, 23 Oct 2026): the public email address is `vaishakh@veritashospitalityadvisors.in`.** Use `.in` for visible text, every `mailto:` link, schema and any new page. The `.in` domain has a catch-all rule that delivers all mail sent to `.in` to the `.com` mailbox, so the three FormSubmit endpoints in `index.html` stay on `.com` on purpose (same mailbox). Never change public links back to `.com`. This replaces the older rule that said `mailto:` links stay on `.com`.
 - Every page carries `<meta name="author">` plus `article:published_time` and `article:modified_time`. Article pages (`perspectives/`) credit Vaishakh Surendran; other pages credit "AISearch Global | Sydney | Australia". Use real dates.
 - Every image needs descriptive alt text; decorative icons are `aria-hidden`; every page sets `og:image:alt` and `twitter:image:alt`.
 - Claude commits locally; the owner pushes. Brand lock below still applies.
