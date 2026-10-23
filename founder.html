@@ -43,7 +43,7 @@
 .test-btn{width:42px;height:42px;border:1px solid rgba(13,27,42,.35);background:transparent;color:#0D1B2A;border-radius:50%;cursor:pointer;font-size:1.05rem;line-height:1;display:inline-flex;align-items:center;justify-content:center}
 .test-btn:hover,.test-btn:focus-visible{background:#0D1B2A;color:#f5f4ef;outline:2px solid #a57426;outline-offset:2px}
 .test-btn[disabled]{opacity:.35;cursor:default;background:transparent;color:#0D1B2A}
-.test-count{font-size:.78rem;letter-spacing:.08em;color:rgba(13,27,42,.6);min-width:64px;text-align:center}
+.test-count{font-size:.78rem;letter-spacing:.08em;color:rgba(13,27,42,.7);min-width:64px;text-align:center}
 @media (prefers-reduced-motion:reduce){.test-grid.is-carousel{scroll-behavior:auto}}
 @media(max-width:700px){.test-grid.is-carousel .test-card{min-height:360px}}
 
@@ -54,10 +54,16 @@
 .award-img img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 8px 20px -10px rgba(13,27,42,.55);background:#fff}
 .award-img[data-lightbox-group] img{max-width:calc(50% - 6px)}
 .award-cap{padding:20px 22px 24px;text-align:left}
-.award-year{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin:0 0 8px}
+.award-year{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#845d1e;margin:0 0 8px}
 .award-title{font-family:'Source Serif 4',serif;font-weight:400;font-size:1.08rem;line-height:1.35;color:#0D1B2A;margin:0 0 6px}
 .award-note{font-size:.8rem;line-height:1.55;color:rgba(13,27,42,.6);margin:0}
 @media(max-width:640px){.award-grid{grid-template-columns:1fr}.award-img{height:280px}}
+
+/* gallery dots: 24px touch target, 8px dot (23 Oct 2026) */
+.gal-dot{width:24px;height:24px;border:0;background:none;padding:0;cursor:pointer;position:relative}
+.gal-dot::before{content:"";position:absolute;left:8px;top:8px;width:8px;height:8px;border-radius:50%;background:rgba(13,27,42,.5)}
+.gal-dot.on::before{background:#845d1e}
+.gal-dot:focus-visible{outline:2px solid #a57426;outline-offset:-2px}
 </style>
 <script type="application/ld+json">
 {
@@ -364,12 +370,12 @@ nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;backgroun
 
 .page-header{background:var(--ink);padding:130px 40px 80px}
 .page-header .inner{max-width:1120px;margin:0 auto}
-.breadcrumb{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.35);margin-bottom:20px}
-.breadcrumb a{color:rgba(245,244,239,.35);text-decoration:none}
+.breadcrumb{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,244,239,.66);margin-bottom:20px}
+.breadcrumb a{color:rgba(245,244,239,.66);text-decoration:none}
 .breadcrumb a:hover{color:rgba(245,244,239,.6)}
 .breadcrumb span{margin:0 8px}
 .page-header h1{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(2rem,4vw,3.2rem);color:var(--cream);line-height:1.1;margin-bottom:10px}
-.page-header h1 em{font-style:normal;color:rgba(245,244,239,.45);font-size:.55em;letter-spacing:.04em;vertical-align:middle}
+.page-header h1 em{font-style:normal;color:rgba(245,244,239,.66);font-size:.55em;letter-spacing:.04em;vertical-align:middle}
 .page-header .sub{font-size:.92rem;color:rgba(245,244,239,.5);font-weight:300;margin-top:12px}
 
 .bio-section{padding:88px 40px;background:var(--cream)}
@@ -391,13 +397,13 @@ nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;backgroun
 
 .performance{background:var(--ink);padding:80px 40px}
 .perf-inner{max-width:1120px;margin:0 auto}
-.perf-inner .section-label{color:rgba(245,244,239,.35)}
+.perf-inner .section-label{color:rgba(245,244,239,.66)}
 .perf-inner h2{font-family:"Source Serif 4",serif;font-weight:300;font-size:clamp(1.6rem,2.5vw,2.1rem);color:var(--cream);margin-bottom:52px;line-height:1.15;max-width:600px}
 .perf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
 .perf-card{background:rgba(245,244,239,.04);border:1px solid rgba(245,244,239,.07);padding:36px 32px}
 .perf-num{font-family:"Source Serif 4",serif;font-size:2.4rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:8px}
 .perf-label{font-size:.8rem;color:rgba(245,244,239,.5);line-height:1.5}
-.perf-context{font-size:.72rem;color:rgba(245,244,239,.3);margin-top:8px;line-height:1.4}
+.perf-context{font-size:.72rem;color:rgba(245,244,239,.62);margin-top:8px;line-height:1.4}
 
 .testimonials-section{background:var(--cream);padding:88px 40px}
 .test-inner{max-width:1120px;margin:0 auto}
@@ -407,8 +413,8 @@ nav:not(.footer-links){position:fixed;top:0;left:0;right:0;z-index:200;backgroun
 .test-body{font-family:"Source Serif 4",serif;font-style:italic;font-weight:300;font-size:1rem;line-height:1.75;color:rgba(245,244,239,.72);margin-bottom:20px}
 .test-attr{display:flex;flex-direction:column;gap:3px}
 .test-name{font-size:.82rem;font-weight:500;color:var(--cream)}
-.test-role{font-size:.73rem;color:rgba(245,244,239,.38);line-height:1.4}
-.test-source{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(165,116,38,.6);white-space:nowrap;padding-top:4px}
+.test-role{font-size:.73rem;color:rgba(245,244,239,.66);line-height:1.4}
+.test-source{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:#b79051;white-space:nowrap;padding-top:4px}
 
 .connect-section{background:rgba(13,27,42,.04);padding:80px 40px;border-top:1px solid rgba(13,27,42,.08)}
 .connect-inner{max-width:680px;margin:0 auto;text-align:center}
@@ -483,7 +489,7 @@ footer.vfooter .vfooter-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;g
 footer.vfooter .vlogo{margin:0 0 22px!important;align-self:auto}
 footer.vfooter .vfooter-tag{font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-weight:300;font-size:1.05rem;color:#f5f4ef;margin:0 0 10px;line-height:1.4}
 footer.vfooter .vfooter-desc{font-size:.85rem;line-height:1.7;color:rgba(245,244,239,.72);margin:0;max-width:340px}
-footer.vfooter .vfooter-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#a57426;font-weight:600;margin:6px 0 18px}
+footer.vfooter .vfooter-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#b79051;font-weight:600;margin:6px 0 18px}
 footer.vfooter .vfooter-nav{display:flex!important;flex-direction:column;gap:12px!important;margin:0!important;position:static!important;background:none!important;height:auto!important;padding:0!important}
 footer.vfooter .vfooter-nav a,footer.vfooter .vfooter-contact a{font-family:"Public Sans",system-ui,sans-serif;font-size:.85rem!important;letter-spacing:0!important;text-transform:none!important;color:rgba(245,244,239,.78)!important;text-decoration:none;transition:color .2s}
 footer.vfooter .vfooter-nav a:hover,footer.vfooter .vfooter-contact a:hover,footer.vfooter a:focus-visible{color:#f5f4ef!important;text-decoration:underline;text-underline-offset:3px}
@@ -492,7 +498,7 @@ footer.vfooter .vfooter-cta{display:inline-block;border:1px solid rgba(165,116,3
 footer.vfooter .vfooter-cta:hover{background:#a57426;border-color:#a57426}
 footer.vfooter .vfooter-bottom{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding-top:24px}
 footer.vfooter .vfooter-bottom p{font-size:.74rem;line-height:1.6;color:rgba(245,244,239,.66);margin:0}
-footer.vfooter .vfooter-bottom a{color:rgba(165,116,38,.9);text-decoration:none}
+footer.vfooter .vfooter-bottom a{color:#b79051;text-decoration:underline;text-underline-offset:3px}
 footer.vfooter .vfooter-bottom a:hover{text-decoration:underline}
 @media(max-width:900px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr}footer.vfooter .vfooter-brand{grid-column:1/-1}}
 @media(max-width:600px){footer.vfooter .vfooter-nav{display:grid!important;grid-template-columns:1fr 1fr;column-gap:24px}footer.vfooter{padding:56px 20px 28px!important}footer.vfooter .vfooter-top{grid-template-columns:1fr;gap:40px}}
@@ -505,7 +511,7 @@ footer.vfooter .vfooter-contact li{font-size:.85rem;color:rgba(245,244,239,.6)}
 footer.vfooter .vfooter-social{margin-top:22px}
 footer.vfooter .vfooter-social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(245,244,239,.2);border-radius:50%;color:rgba(245,244,239,.8)}
 footer.vfooter .vfooter-social a:hover{border-color:#a57426;color:#a57426}
-footer.vfooter .vfooter-legal span{margin:0 10px;color:rgba(245,244,239,.3)}
+footer.vfooter .vfooter-legal span{margin:0 10px;color:rgba(245,244,239,.62)}
 footer.vfooter .vfooter-bottom{align-items:center}
 @media(max-width:1024px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr!important}footer.vfooter .vfooter-brand{grid-column:1/-1}}
 @media(max-width:600px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr!important;gap:36px 24px!important}footer.vfooter .vfooter-col:last-child{grid-column:1/-1}footer.vfooter .vfooter-nav{display:flex!important;flex-direction:column}footer.vfooter .vfooter-bottom{flex-direction:column;align-items:flex-start}}
@@ -520,10 +526,10 @@ picture{display:contents}picture>source{display:none}
 .press-list{list-style:none;margin:0 0 8px;padding:0;max-width:760px}
 .press-list li{padding:16px 0;border-top:1px solid rgba(13,27,42,.1)}
 .press-list li:last-child{border-bottom:1px solid rgba(13,27,42,.1)}
-.press-src{display:block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,27,42,.5);margin-bottom:6px}
+.press-src{display:block;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,27,42,.68);margin-bottom:6px}
 .press-list a{font-family:'Source Serif 4',serif;font-weight:400;font-size:1.02rem;line-height:1.45;color:#0D1B2A;text-decoration:underline;text-decoration-color:rgba(165,116,38,.6);text-underline-offset:3px}
 .press-list a:hover,.press-list a:focus-visible{color:#a57426}
-.press-sub{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#a57426;font-weight:600;margin:30px 0 12px}
+.press-sub{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#845d1e;font-weight:600;margin:30px 0 12px}
 .press-intro{font-size:.92rem;line-height:1.75;color:rgba(13,27,42,.72);max-width:700px;margin-bottom:26px}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7QRDJ87V3"></script>
@@ -722,7 +728,7 @@ picture{display:contents}picture>source{display:none}
 
 <section style="background:#fff;padding:80px 40px;border-top:1px solid rgba(13,27,42,.08)">
   <div style="max-width:1120px;margin:0 auto">
-    <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.4);margin-bottom:12px">In the field</p>
+    <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.68);margin-bottom:12px">In the field</p>
     <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.4rem,2.2vw,1.9rem);color:#0D1B2A;line-height:1.15;margin-bottom:44px;max-width:540px">25 years in hospitality &mdash; some of the moments that shaped the practice.</h2>
 
     <style>
@@ -742,7 +748,7 @@ picture{display:contents}picture>source{display:none}
             <picture><source srcset="img/vaishakh-suman-tarafdar.webp" type="image/webp"><img loading="lazy" decoding="async" width="800" height="1066" src="img/vaishakh-suman-tarafdar.jpg" alt="Vaishakh Surendran with Suman Tarafdar at Lyfe Hotels Bhubaneswar, November 2024" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block"></picture>
           </div>
           <div class="gallery-cap" style="background:#0D1B2A;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">November 2024 &middot; Lyfe Hotels &amp; Resorts, Bhubaneswar</p>
+            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#b79051;margin-bottom:14px">November 2024 &middot; Lyfe Hotels &amp; Resorts, Bhubaneswar</p>
             <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">With hospitality legend Suman Tarafdar &mdash; one of India&rsquo;s most respected names in the industry.</p>
           </div>
         </div>
@@ -753,9 +759,9 @@ picture{display:contents}picture>source{display:none}
             <picture><source srcset="img/vaishakh-naval-officers.webp" type="image/webp"><img loading="lazy" decoding="async" width="800" height="600" src="img/vaishakh-naval-officers.jpg" alt="Vaishakh Surendran with Vice Admiral Sameer Saxena AVSM NM and Rear Admiral Shantanu Jha at Lyfe Hotels, 2024" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block"></picture>
           </div>
           <div class="gallery-cap" style="background:#0D1B2A;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2024 &middot; Lyfe Hotels &amp; Resorts, Bhubaneswar</p>
+            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#b79051;margin-bottom:14px">2024 &middot; Lyfe Hotels &amp; Resorts, Bhubaneswar</p>
             <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:12px">Hosting Vice Admiral Sameer Saxena AVSM NM and Rear Admiral Shantanu Jha at Lyfe Hotels &amp; Resorts.</p>
-            <p style="font-size:.8rem;color:rgba(245,244,239,.45);line-height:1.6">VAdm Saxena presented a Naval insignia-embossed wallet at departure &mdash; a rare mark of appreciation from senior Indian Navy leadership.</p>
+            <p style="font-size:.8rem;color:rgba(245,244,239,.66);line-height:1.6">VAdm Saxena presented a Naval insignia-embossed wallet at departure &mdash; a rare mark of appreciation from senior Indian Navy leadership.</p>
           </div>
         </div>
 
@@ -765,9 +771,9 @@ picture{display:contents}picture>source{display:none}
             <picture><source srcset="img/radisson-kuwait-delegation-team.webp" type="image/webp"><img loading="lazy" decoding="async" width="800" height="597" src="img/radisson-kuwait-delegation-team.jpg" alt="Radisson Blu Kuwait team during distinguished US government delegation visit, 2008" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block"></picture>
           </div>
           <div class="gallery-cap" style="background:#0D1B2A;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2007&ndash;2010 &middot; Radisson Blu Hotel, Kuwait</p>
+            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#b79051;margin-bottom:14px">2007&ndash;2010 &middot; Radisson Blu Hotel, Kuwait</p>
             <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:12px">Managing US government delegations and diplomatic visits at Radisson Blu Hotel Kuwait.</p>
-            <p style="font-size:.8rem;color:rgba(245,244,239,.45);line-height:1.6">Work that earned written commendations from the US Secret Service and the US Department of Homeland Security.</p>
+            <p style="font-size:.8rem;color:rgba(245,244,239,.66);line-height:1.6">Work that earned written commendations from the US Secret Service and the US Department of Homeland Security.</p>
           </div>
         </div>
 
@@ -777,7 +783,7 @@ picture{display:contents}picture>source{display:none}
             <picture><source srcset="img/vaishakh-odisha-award-stage-2025.webp" type="image/webp"><img loading="lazy" decoding="async" width="480" height="853" src="img/vaishakh-odisha-award-stage-2025.jpg" alt="Vaishakh Surendran receiving award at Odisha Leadership Awards 2025" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block"></picture>
           </div>
           <div class="gallery-cap" style="background:#0D1B2A;padding:48px 44px;display:flex;flex-direction:column;justify-content:flex-end;min-height:360px">
-            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin-bottom:14px">2025 &middot; Odisha Leadership Awards</p>
+            <p style="font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#b79051;margin-bottom:14px">2025 &middot; Odisha Leadership Awards</p>
             <p style="font-family:'Source Serif 4',serif;font-weight:300;font-size:1.1rem;color:#f5f4ef;line-height:1.5;margin-bottom:0">Receiving recognition on stage at the Odisha Leadership Awards &mdash; for building one of the state&rsquo;s most admired hospitality workplaces.</p>
           </div>
         </div>
@@ -788,16 +794,16 @@ picture{display:contents}picture>source{display:none}
       <button onclick="galleryMove(1)" aria-label="Next" style="position:absolute;top:42%;right:16px;transform:translateY(-50%);background:rgba(13,27,42,.75);border:none;color:#fff;width:44px;height:44px;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;border-radius:2px">&rarr;</button>
     </div>
 
-    <div style="display:flex;gap:8px;justify-content:center;margin-top:18px">
-      <button class="gal-dot" onclick="galleryGo(0)" style="width:8px;height:8px;border-radius:50%;border:none;background:#a57426;cursor:pointer;padding:0"></button>
-      <button class="gal-dot" onclick="galleryGo(1)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(13,27,42,.2);cursor:pointer;padding:0"></button>
-      <button class="gal-dot" onclick="galleryGo(2)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(13,27,42,.2);cursor:pointer;padding:0"></button>
-      <button class="gal-dot" onclick="galleryGo(3)" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(13,27,42,.2);cursor:pointer;padding:0"></button>
+    <div style="display:flex;gap:0;justify-content:center;margin-top:10px">
+      <button class="gal-dot on" onclick="galleryGo(0)" aria-label="Show photo 1 of 4"></button>
+      <button class="gal-dot" onclick="galleryGo(1)" aria-label="Show photo 2 of 4"></button>
+      <button class="gal-dot" onclick="galleryGo(2)" aria-label="Show photo 3 of 4"></button>
+      <button class="gal-dot" onclick="galleryGo(3)" aria-label="Show photo 4 of 4"></button>
     </div>
 
     <!-- Recognition section -->
     <div style="margin-top:64px">
-      <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.4);margin-bottom:12px">Recognition</p>
+      <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.68);margin-bottom:12px">Recognition</p>
       <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.2rem,1.8vw,1.6rem);color:#0D1B2A;line-height:1.15;margin-bottom:40px">Awards, certifications, and commendations.</h3>
       <div class="award-grid" data-lightbox>
         <article class="award-card">
@@ -912,7 +918,7 @@ picture{display:contents}picture>source{display:none}
   function update(){
     document.getElementById("gallery-track").style.transform="translateX(-"+idx*100+"%)";
     document.querySelectorAll(".gal-dot").forEach(function(d,i){
-      d.style.background=i===idx?"#a57426":"rgba(13,27,42,.2)";
+      d.classList.toggle("on",i===idx);
     });
   }
   window.galleryMove=function(dir){idx=(idx+dir+total)%total;update();};
@@ -936,34 +942,34 @@ picture{display:contents}picture>source{display:none}
 <!-- TESTIMONIALS -->
 <section style="background:var(--cream);padding:80px 40px;border-top:1px solid rgba(13,27,42,.1)">
   <div style="max-width:1120px;margin:0 auto">
-    <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.4);margin-bottom:12px">Recommendations</p>
+    <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.68);margin-bottom:12px">Recommendations</p>
     <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--ink);line-height:1.15;margin-bottom:48px">From GMs, authors, and senior hospitality leaders.</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
       <div style="background:#fff;border:1px solid rgba(13,27,42,.1);padding:32px;border-radius:4px">
         <p style="font-size:.9rem;line-height:1.8;color:rgba(13,27,42,.75);margin-bottom:24px;font-style:italic">"Sharp, well read and very tech-savvy, Vaishakh was instrumental in helping us break all Conference &amp; Banquets Revenue records together at Taj Fort Aguada. I am confident that his best is yet to come."</p>
         <div>
           <p style="font-size:.82rem;font-weight:500;color:var(--ink);margin-bottom:2px">Dhiren Johar</p>
-          <p style="font-size:.75rem;color:rgba(13,27,42,.5);margin-bottom:2px">Hotel &amp; Hospitality Development Advisor</p>
-          <p style="font-size:.72rem;color:rgba(13,27,42,.4)">Managed Vaishakh &middot; Taj Fort Aguada, Goa</p>
+          <p style="font-size:.75rem;color:rgba(13,27,42,.68);margin-bottom:2px">Hotel &amp; Hospitality Development Advisor</p>
+          <p style="font-size:.72rem;color:rgba(13,27,42,.68)">Managed Vaishakh &middot; Taj Fort Aguada, Goa</p>
         </div>
       </div>
       <div style="background:#fff;border:1px solid rgba(13,27,42,.1);padding:32px;border-radius:4px">
         <p style="font-size:.9rem;line-height:1.8;color:rgba(13,27,42,.75);margin-bottom:24px;font-style:italic">"Vaishakh always had an open mind to new ideas. He had the ability to lead from the front, which enabled him to get results from his team. A naturally hospitable person and a true hotelier."</p>
         <div>
           <p style="font-size:.82rem;font-weight:500;color:var(--ink);margin-bottom:2px">Raghubalan Ganapathy</p>
-          <p style="font-size:.75rem;color:rgba(13,27,42,.5);margin-bottom:2px">Author &amp; Hospitality Advisor</p>
-          <p style="font-size:.72rem;color:rgba(13,27,42,.4)">Senior colleague &middot; 2010</p>
+          <p style="font-size:.75rem;color:rgba(13,27,42,.68);margin-bottom:2px">Author &amp; Hospitality Advisor</p>
+          <p style="font-size:.72rem;color:rgba(13,27,42,.68)">Senior colleague &middot; 2010</p>
         </div>
       </div>
     </div>
-    <p style="font-size:.78rem;color:rgba(13,27,42,.4);margin-top:28px">Read all 18 recommendations on <a href="https://www.linkedin.com/in/vaishakhsurendran/" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none">Vaishakh's LinkedIn profile &rarr;</a></p>
+    <p style="font-size:.78rem;color:rgba(13,27,42,.68);margin-top:28px">Read all 18 recommendations on <a style="color:#845d1e;text-decoration:underline;text-underline-offset:3px" href="https://www.linkedin.com/in/vaishakhsurendran/" target="_blank" rel="noopener">Vaishakh's LinkedIn profile &rarr;</a></p>
   </div>
 </section>
 
 <!-- MEDIA AND PRESS -->
 <section id="media" style="background:#fff;padding:80px 40px;border-top:1px solid rgba(13,27,42,.08)">
   <div style="max-width:1120px;margin:0 auto">
-    <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.4);margin-bottom:12px">Media and press</p>
+    <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.68);margin-bottom:12px">Media and press</p>
     <h2 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.4rem,2.2vw,1.9rem);color:#0D1B2A;line-height:1.15;margin-bottom:18px;max-width:540px">In the trade press.</h2>
     <p class="press-intro">Coverage of Vaishakh Surendran&rsquo;s hotel career. These pieces report on his work as a general manager and do not concern Veritas.</p>
     <p class="press-sub">Articles</p>
