@@ -46,6 +46,18 @@
 .test-count{font-size:.78rem;letter-spacing:.08em;color:rgba(13,27,42,.6);min-width:64px;text-align:center}
 @media (prefers-reduced-motion:reduce){.test-grid.is-carousel{scroll-behavior:auto}}
 @media(max-width:700px){.test-grid.is-carousel .test-card{min-height:360px}}
+
+/* awards and commendations gallery (23 Oct 2026): consistent frames, certificates shown whole */
+.award-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px}
+.award-card{background:#fff;border:1px solid rgba(13,27,42,.1);box-shadow:0 1px 2px rgba(13,27,42,.05),0 14px 30px -18px rgba(13,27,42,.35);display:flex;flex-direction:column;margin:0}
+.award-img{background:#f5f4ef;height:300px;padding:20px;display:flex;align-items:center;justify-content:center;gap:12px;border-bottom:1px solid rgba(13,27,42,.08)}
+.award-img img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 8px 20px -10px rgba(13,27,42,.55);background:#fff}
+.award-img[data-lightbox-group] img{max-width:calc(50% - 6px)}
+.award-cap{padding:20px 22px 24px;text-align:left}
+.award-year{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#a57426;margin:0 0 8px}
+.award-title{font-family:'Source Serif 4',serif;font-weight:400;font-size:1.08rem;line-height:1.35;color:#0D1B2A;margin:0 0 6px}
+.award-note{font-size:.8rem;line-height:1.55;color:rgba(13,27,42,.6);margin:0}
+@media(max-width:640px){.award-grid{grid-template-columns:1fr}.award-img{height:280px}}
 </style>
 <script type="application/ld+json">
 {
@@ -64,24 +76,34 @@
       },
       "description": "Independent hotel owner advisor with more than 25 years in hospitality across India, the Maldives, Kuwait and the USA, including General Manager roles since 2015. Founder of Veritas Hospitality Advisors.",
       "hasCredential": "Diploma in Hospitality Management, Institut Hôtelier César Ritz, Switzerland (2001)",
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Institut Hotelier Cesar Ritz",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "CH"
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Institut Hotelier Cesar Ritz",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CH"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Noga Hilton Genève",
+          "description": "Room Service trainee, December 2000 to June 2001"
         }
-      },
+      ],
       "award": [
         "Best General Manager in Odisha 2024–25",
         "Odisha Best Employer Award 2025",
         "CMO Asia Most Influential General Managers 2025",
         "IGBC Green Crusader designation, World Earth Day 2025",
-        "Taj Award for Empowerment",
+        "Taj Award for Empowerment 2006–07 — Certificate of Excellence, Taj Garden Retreat, Kumarakom",
         "Fortune Hotels (ITC Hotels group) award for highest sales across the brand, Q2 2019",
         "TripAdvisor Certificate of Excellence — Keys Hotels Chennai 2015",
         "Coin of Appreciation — CENTCOM & US Military",
         "Coin of Appreciation — Indian Navy",
+        "Coin of Appreciation — Chairman, Joint Chiefs of Staff (USA)",
+        "Coin of Excellence — US Army Criminal Investigation Command",
+        "Coin of Appreciation — US Air Force expeditionary support group, Kuwait",
         "Lapel — US Secret Service",
         "Lapel — US Department of Homeland Security",
         "Rotors — Commanding Officer, INS Garuda, Ernakulam",
@@ -777,64 +799,107 @@ picture{display:contents}picture>source{display:none}
     <div style="margin-top:64px">
       <p style="font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,27,42,.4);margin-bottom:12px">Recognition</p>
       <h3 style="font-family:'Source Serif 4',serif;font-weight:300;font-size:clamp(1.2rem,1.8vw,1.6rem);color:#0D1B2A;line-height:1.15;margin-bottom:40px">Awards, certifications, and commendations.</h3>
-      <div data-lightbox style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px">
-
-        <div style="background:#f5f4ef;border:1px solid rgba(13,27,42,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
-          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-            <picture><source srcset="img/tripadvisor-cert-keys-chennai-2015.webp" type="image/webp"><img loading="lazy" decoding="async" width="960" height="636" src="img/tripadvisor-cert-keys-chennai-2015.jpg" alt="TripAdvisor Certificate of Excellence 2015 — Keys Katti-Ma Hotel Chennai" style="max-width:100%;max-height:160px;object-fit:contain"></picture>
+      <div class="award-grid" data-lightbox>
+        <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/odisha-best-employer-cert-2025.webp" type="image/webp"><img loading="lazy" decoding="async" width="658" height="988" src="img/odisha-best-employer-cert-2025.jpg" alt="Odisha Best Employer Brand Awards 2025 — LYFE Hotels Bhubaneswar"></picture>
           </div>
-          <div style="text-align:center">
-            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2015</p>
-            <p style="font-size:.85rem;color:#0D1B2A;font-weight:500;margin-bottom:4px">TripAdvisor Certificate of Excellence</p>
-            <p style="font-size:.78rem;color:rgba(13,27,42,.5)">Keys Katti-Ma Hotel, Chennai</p>
+          <div class="award-cap">
+            <p class="award-year">2025</p>
+            <h4 class="award-title">Best Employer Brand Award</h4>
+            <p class="award-note">Odisha Employer Brand Awards</p>
           </div>
-        </div>
-
-        <div style="background:#f5f4ef;border:1px solid rgba(13,27,42,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
-          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-            <picture><source srcset="img/igbc-green-crusader-cert-2025.webp" type="image/webp"><img loading="lazy" decoding="async" width="1179" height="928" src="img/igbc-green-crusader-cert-2025.jpg" alt="IGBC Green Crusader Certificate 2025" style="max-width:100%;max-height:160px;object-fit:contain"></picture>
+        </article>
+        <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/cmo-asia-influential-gm-cert-2025.webp" type="image/webp"><img loading="lazy" decoding="async" width="752" height="1118" src="img/cmo-asia-influential-gm-cert-2025.jpg" alt="CMO Asia Odisha's Most Influential General Managers 2025"></picture>
           </div>
-          <div style="text-align:center">
-            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2025</p>
-            <p style="font-size:.85rem;color:#0D1B2A;font-weight:500;margin-bottom:4px">IGBC Green Crusader Award</p>
-            <p style="font-size:.78rem;color:rgba(13,27,42,.5)">Indian Green Building Council</p>
+          <div class="award-cap">
+            <p class="award-year">2025</p>
+            <h4 class="award-title">Most Influential GMs — Odisha</h4>
+            <p class="award-note">CMO Asia</p>
           </div>
-        </div>
-
-        <div style="background:#f5f4ef;border:1px solid rgba(13,27,42,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
-          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-            <picture><source srcset="img/odisha-best-employer-cert-2025.webp" type="image/webp"><img loading="lazy" decoding="async" width="716" height="1092" src="img/odisha-best-employer-cert-2025.jpg" alt="Odisha Best Employer Brand Awards 2025 — LYFE Hotels Bhubaneswar" style="max-width:100%;max-height:160px;object-fit:contain"></picture>
+        </article>
+        <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/igbc-green-crusader-cert-2025.webp" type="image/webp"><img loading="lazy" decoding="async" width="1164" height="826" src="img/igbc-green-crusader-cert-2025.jpg" alt="IGBC Green Crusader Certificate 2025"></picture>
           </div>
-          <div style="text-align:center">
-            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2025</p>
-            <p style="font-size:.85rem;color:#0D1B2A;font-weight:500;margin-bottom:4px">Best Employer Brand Award</p>
-            <p style="font-size:.78rem;color:rgba(13,27,42,.5)">Odisha Employer Brand Awards</p>
+          <div class="award-cap">
+            <p class="award-year">2025</p>
+            <h4 class="award-title">IGBC Green Crusader Award</h4>
+            <p class="award-note">Indian Green Building Council</p>
           </div>
-        </div>
-
-        <div style="background:#f5f4ef;border:1px solid rgba(13,27,42,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
-          <div style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;overflow:hidden">
-            <picture><source srcset="img/cmo-asia-influential-gm-cert-2025.webp" type="image/webp"><img loading="lazy" decoding="async" width="800" height="1223" src="img/cmo-asia-influential-gm-cert-2025.jpg" alt="CMO Asia Odisha's Most Influential General Managers 2025" style="max-width:100%;max-height:160px;object-fit:contain"></picture>
+        </article>
+        <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/tripadvisor-cert-keys-chennai-2015.webp" type="image/webp"><img loading="lazy" decoding="async" width="848" height="636" src="img/tripadvisor-cert-keys-chennai-2015.jpg" alt="TripAdvisor Certificate of Excellence 2015 — Keys Katti-Ma Hotel Chennai"></picture>
           </div>
-          <div style="text-align:center">
-            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2025</p>
-            <p style="font-size:.85rem;color:#0D1B2A;font-weight:500;margin-bottom:4px">Most Influential GMs — Odisha</p>
-            <p style="font-size:.78rem;color:rgba(13,27,42,.5)">CMO Asia</p>
+          <div class="award-cap">
+            <p class="award-year">2015</p>
+            <h4 class="award-title">TripAdvisor Certificate of Excellence</h4>
+            <p class="award-note">Keys Katti-Ma Hotel, Chennai</p>
           </div>
-        </div>
-
-        <div style="background:#f5f4ef;border:1px solid rgba(13,27,42,.08);padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px">
-          <div data-lightbox-group style="width:100%;height:160px;display:flex;align-items:center;justify-content:center;gap:8px;overflow:hidden">
-            <picture><source srcset="img/radisson-kuwait-letterhead-autograph.webp" type="image/webp"><img loading="lazy" decoding="async" width="480" height="648" src="img/radisson-kuwait-letterhead-autograph.jpg" alt="Autograph of Barack Obama on Radisson SAS Hotel Kuwait letterhead, 2007–2010" style="max-width:46%;max-height:160px;object-fit:contain"></picture>
-            <picture><source srcset="img/dhs-homeland-security-letter.webp" type="image/webp"><img loading="lazy" decoding="async" width="480" height="642" src="img/dhs-homeland-security-letter.jpg" alt="US Department of Homeland Security letter of appreciation, 2007–2010" style="max-width:46%;max-height:160px;object-fit:contain"></picture>
+        </article>
+        <article class="award-card">
+          <div class="award-img" data-lightbox-group>
+            <picture><source srcset="img/radisson-kuwait-letterhead-autograph.webp" type="image/webp"><img loading="lazy" decoding="async" width="480" height="648" src="img/radisson-kuwait-letterhead-autograph.jpg" alt="Autograph of Barack Obama on Radisson SAS Hotel Kuwait letterhead, 2007–2010"></picture><picture><source srcset="img/dhs-homeland-security-letter.webp" type="image/webp"><img loading="lazy" decoding="async" width="378" height="582" src="img/dhs-homeland-security-letter.jpg" alt="US Department of Homeland Security letter of appreciation, 2007–2010"></picture>
           </div>
-          <div style="text-align:center">
-            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#a57426;margin-bottom:6px">2007&ndash;2010</p>
-            <p style="font-size:.85rem;color:#0D1B2A;font-weight:500;margin-bottom:4px">Government Commendations</p>
-            <p style="font-size:.78rem;color:rgba(13,27,42,.5)">US Secret Service, US Department of Homeland Security</p>
+          <div class="award-cap">
+            <p class="award-year">2007&ndash;2010</p>
+            <h4 class="award-title">Government Commendations</h4>
+            <p class="award-note">US Secret Service, US Department of Homeland Security</p>
           </div>
-        </div>
-
+        </article>
+                <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/military-coins-of-appreciation-a.webp" type="image/webp"><img loading="lazy" decoding="async" width="675" height="386" src="img/military-coins-of-appreciation-a.jpg" alt="Coins of appreciation from US Central Command, a US Air Force group in Kuwait, US Army Criminal Investigation Command, the Chairman of the Joint Chiefs of Staff and the Indian Navy, 2007&ndash;2024"></picture>
+          </div>
+          <div class="award-cap">
+            <p class="award-year">2007&ndash;2024</p>
+            <h4 class="award-title">Coins of appreciation</h4>
+            <p class="award-note">US Central Command, US Army, US Air Force, the Chairman of the Joint Chiefs of Staff and the Indian Navy (INS Rajali)</p>
+          </div>
+        </article>
+        <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/naval-insignia-wallet-gift.webp" type="image/webp"><img loading="lazy" decoding="async" width="640" height="480" src="img/naval-insignia-wallet-gift.jpg" alt="Leather wallet embossed with the Indian Navy insignia, a parting gift from Vice Admiral Sameer Saxena, 2024"></picture>
+          </div>
+          <div class="award-cap">
+            <p class="award-year">2024</p>
+            <h4 class="award-title">Naval insignia wallet</h4>
+            <p class="award-note">A parting gift from Vice Admiral Sameer Saxena, AVSM NM, Indian Navy, after his stay at Lyfe Hotels</p>
+          </div>
+        </article>
+        <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/secret-service-and-homeland-security-lapel-pins.webp" type="image/webp"><img loading="lazy" decoding="async" width="690" height="255" src="img/secret-service-and-homeland-security-lapel-pins.jpg" alt="US Department of Homeland Security emblem and US Secret Service lapel pin, 2007&ndash;2010"></picture>
+          </div>
+          <div class="award-cap">
+            <p class="award-year">2007&ndash;2010</p>
+            <h4 class="award-title">Lapel pins</h4>
+            <p class="award-note">US Secret Service and US Department of Homeland Security</p>
+          </div>
+        </article>
+        <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/taj-award-empowerment-cert-2006-07.webp" type="image/webp"><img loading="lazy" decoding="async" width="468" height="626" src="img/taj-award-empowerment-cert-2006-07.jpg" alt="Taj Award for Empowerment certificate of excellence, Taj Garden Retreat Kumarakom, 2006&ndash;07"></picture>
+          </div>
+          <div class="award-cap">
+            <p class="award-year">2006&ndash;07</p>
+            <h4 class="award-title">Taj Award for Empowerment</h4>
+            <p class="award-note">Certificate of Excellence, Taj Garden Retreat, Kumarakom</p>
+          </div>
+        </article>
+        <article class="award-card">
+          <div class="award-img">
+            <picture><source srcset="img/nogahilton-geneve-training-cert-2001.webp" type="image/webp"><img loading="lazy" decoding="async" width="454" height="608" src="img/nogahilton-geneve-training-cert-2001.jpg" alt="Noga Hilton Gen&egrave;ve training certificate for a Room Service trainee, December 2000 to June 2001"></picture>
+          </div>
+          <div class="award-cap">
+            <p class="award-year">2000&ndash;2001</p>
+            <h4 class="award-title">Hotel training certificate</h4>
+            <p class="award-note">Noga Hilton Gen&egrave;ve, Room Service trainee, December 2000 to June 2001</p>
+          </div>
+        </article>
       </div>
     </div>
 
