@@ -31,7 +31,22 @@
 <meta name="twitter:image:alt" content="Veritas Hospitality Advisors — independent advisory for hotel owners in India, founded by Vaishakh Surendran">
 
 
-<link rel="preload" href="/fonts/web/public-sans-400.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/web/source-serif-4-300.woff" as="font" type="font/woff" crossorigin><style id="brand-fonts">@font-face{font-family:"Public Sans";font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/web/public-sans-300.woff) format("woff")}@font-face{font-family:"Public Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/web/public-sans-400.woff) format("woff")}@font-face{font-family:"Public Sans";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/web/public-sans-500.woff) format("woff")}@font-face{font-family:"Public Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/web/public-sans-600.woff) format("woff")}@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/web/source-serif-4-300.woff) format("woff")}@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/web/source-serif-4-400.woff) format("woff")}@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/web/source-serif-4-600.woff) format("woff")}@font-face{font-family:"Source Serif 4";font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/web/source-serif-4-300-italic.woff) format("woff")}</style>
+<link rel="preload" href="/fonts/web/public-sans-400.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/web/source-serif-4-300.woff" as="font" type="font/woff" crossorigin><style id="brand-fonts">@font-face{font-family:"Public Sans";font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/web/public-sans-300.woff) format("woff")}@font-face{font-family:"Public Sans";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/web/public-sans-400.woff) format("woff")}@font-face{font-family:"Public Sans";font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/web/public-sans-500.woff) format("woff")}@font-face{font-family:"Public Sans";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/web/public-sans-600.woff) format("woff")}@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/web/source-serif-4-300.woff) format("woff")}@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/web/source-serif-4-400.woff) format("woff")}@font-face{font-family:"Source Serif 4";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/web/source-serif-4-600.woff) format("woff")}@font-face{font-family:"Source Serif 4";font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/web/source-serif-4-300-italic.woff) format("woff")}
+/* recommendations carousel (23 Oct 2026): progressive enhancement, stacked list without JS, no autoplay */
+.test-carousel{position:relative}
+.test-grid.is-carousel{flex-direction:row;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;outline-offset:4px}
+.test-grid.is-carousel::-webkit-scrollbar{display:none}
+.test-grid.is-carousel .test-card{flex:0 0 100%;box-sizing:border-box;scroll-snap-align:start;min-height:300px;align-content:start}
+.test-grid.is-carousel:focus-visible{outline:2px solid #a57426}
+.test-nav{display:none;align-items:center;gap:14px;margin-top:20px}
+.test-carousel.is-ready .test-nav{display:flex}
+.test-btn{width:42px;height:42px;border:1px solid rgba(13,27,42,.35);background:transparent;color:#0D1B2A;border-radius:50%;cursor:pointer;font-size:1.05rem;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+.test-btn:hover,.test-btn:focus-visible{background:#0D1B2A;color:#f5f4ef;outline:2px solid #a57426;outline-offset:2px}
+.test-btn[disabled]{opacity:.35;cursor:default;background:transparent;color:#0D1B2A}
+.test-count{font-size:.78rem;letter-spacing:.08em;color:rgba(13,27,42,.6);min-width:64px;text-align:center}
+@media (prefers-reduced-motion:reduce){.test-grid.is-carousel{scroll-behavior:auto}}
+@media(max-width:700px){.test-grid.is-carousel .test-card{min-height:360px}}
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -165,6 +180,112 @@
             "name": "ETHospitalityWorld"
           },
           "url": "https://hospitality.economictimes.indiatimes.com/news/hotels/lyfe-hotels-bhubaneswar-welcomes-vaishakh-surendran-as-general-manager/114105060"
+        },
+        {
+          "@type": "Quotation",
+          "text": "We are thrilled to welcome Vaishakh Surendran to the Lyfe Hotels family. His proven leadership and deep understanding of the hospitality sector will undoubtedly contribute to the continued success of our property.",
+          "about": {
+            "@id": "https://veritashospitalityadvisors.in/#vaishakh"
+          },
+          "spokenByCharacter": {
+            "@type": "Person",
+            "name": "Dhiman Mazumdar",
+            "jobTitle": "Chief Operating Officer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Lyfe Hotels and Resorts, Bhubaneswar"
+            }
+          },
+          "isBasedOn": "https://bottindia.com/lyfe-hotels-bhubaneswar-welcomes-vaishakh-surendran-as-general-manager/",
+          "datePublished": "2024-10-08",
+          "creditText": "BOTT India"
+        },
+        {
+          "@type": "Quotation",
+          "text": "A seasoned hospitality professional known for his calm leadership and exceptional guest handling skills.",
+          "about": {
+            "@id": "https://veritashospitalityadvisors.in/#vaishakh"
+          },
+          "creditText": "AlphaTalks, Alphadroid",
+          "isBasedOn": "https://www.youtube.com/watch?v=HbZYUmcVR5Y",
+          "datePublished": "2024-07-19"
+        },
+        {
+          "@type": "Quotation",
+          "text": "Renowned for his extensive experience in hotel and resort operations, particularly in front office management, and his leadership qualities, Mr. Surendran has consistently delivered top-tier results throughout his career.",
+          "about": {
+            "@id": "https://veritashospitalityadvisors.in/#vaishakh"
+          },
+          "creditText": "BOTT India",
+          "isBasedOn": "https://bottindia.com/lyfe-hotels-bhubaneswar-welcomes-vaishakh-surendran-as-general-manager/",
+          "datePublished": "2024-10-08"
+        }
+      ],
+      "review": [
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@id": "https://veritashospitalityadvisors.in/#vaishakh"
+          },
+          "reviewBody": "Sharp, well read and very tech-savvy, Vaishakh was instrumental in helping us break all Conference & Banquets Revenue records together at Taj Fort Aguada. I am confident that his best is yet to come.",
+          "author": {
+            "@type": "Person",
+            "name": "Dhiren Johar",
+            "jobTitle": "Hotel & Hospitality Development Advisor"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LinkedIn"
+          }
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@id": "https://veritashospitalityadvisors.in/#vaishakh"
+          },
+          "reviewBody": "Vaishakh is highly qualified, hardworking and friendly — always delivers quality work with a real 'Yes, I can attitude'. Wherever he goes, he will be a tremendous asset to the organisation.",
+          "author": {
+            "@type": "Person",
+            "name": "Roshan Khawas CHGM",
+            "jobTitle": "Certified Hotel General Manager"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LinkedIn"
+          }
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@id": "https://veritashospitalityadvisors.in/#vaishakh"
+          },
+          "reviewBody": "Vaishakh always had an open mind to new ideas. He had the ability to lead from the front, which enabled him to get results from his team. A naturally hospitable person and a true hotelier.",
+          "author": {
+            "@type": "Person",
+            "name": "Raghubalan Ganapathy",
+            "jobTitle": "Author and Hospitality Advisor"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LinkedIn"
+          }
+        },
+        {
+          "@type": "Review",
+          "itemReviewed": {
+            "@id": "https://veritashospitalityadvisors.in/#vaishakh"
+          },
+          "reviewBody": "I received many kudos from the high profiled guests of the USO concerning the outstanding treatment they received from him during their stays. I really do think the world of him and respect him greatly. I recommend Vaishakh to you without any reservation.",
+          "author": {
+            "@type": "Person",
+            "name": "R. Kevin Meade",
+            "jobTitle": "Regional Vice President of Operations",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "United Service Organizations (USO), Southwest Asia"
+            }
+          },
+          "datePublished": "2010-08-09"
         }
       ]
     },
@@ -427,6 +548,7 @@ picture{display:contents}picture>source{display:none}
         <h3>Credentials &amp; recognition</h3>
         <div class="cred-list">
           <div class="cred-item"><span class="cred-label">Qualification</span><span class="cred-val">Diploma in Hospitality Management, Institut Hôtelier César Ritz, Switzerland (2001)</span></div>
+          <div class="cred-item"><span class="cred-label">Early career</span><span class="cred-val">Room Service trainee, Noga Hilton Geneva (December 2000 to June 2001)</span></div>
           <div class="cred-item"><span class="cred-label">Experience</span><span class="cred-val">25+ years across India, Maldives, Kuwait, USA</span></div>
           <div class="cred-item"><span class="cred-label">Brands</span><span class="cred-val">Accor · Wyndham · ITC · Taj · Independent flags</span></div>
           <div class="cred-item"><span class="cred-label">Recognition</span><span class="cred-val">Best GM in Odisha · Taj Award for Empowerment (2006–07) · Fortune Hotels highest-sales award (Q2 2019) · IGBC Green Crusader · CMO Asia Most Influential GMs 2025</span></div>
@@ -491,7 +613,8 @@ picture{display:contents}picture>source{display:none}
   <div class="test-inner">
     <span class="section-label">What colleagues and peers say</span>
     <h2>Recommendations from the industry.</h2>
-    <div class="test-grid">
+    <div class="test-carousel" id="rec-carousel" role="region" aria-roledescription="carousel" aria-label="Recommendations from colleagues, employers and the trade press">
+    <div class="test-grid" id="rec-track">
       <div class="test-card">
         <div>
           <p class="test-body">"Sharp, well read and very tech-savvy, Vaishakh was instrumental in helping us break all Conference &amp; Banquets Revenue records together at Taj Fort Aguada. I am confident that his best is yet to come."</p>
@@ -522,9 +645,58 @@ picture{display:contents}picture>source{display:none}
         </div>
         <span class="test-source">LinkedIn</span>
       </div>
+      <div class="test-card">
+        <div>
+          <p class="test-body">"I received many kudos from the high profiled guests of the USO concerning the outstanding treatment they received from him during their stays."</p>
+          <p class="test-body">"I really do think the world of him and respect him greatly. I recommend Vaishakh to you without any reservation."</p>
+          <div class="test-attr">
+            <span class="test-name">R. Kevin Meade</span>
+            <span class="test-role">Regional Vice President of Operations, United Service Organizations (USO), Southwest Asia &middot; writing after about ten months at the Radisson Blu Hotel, Kuwait City</span>
+          </div>
+        </div>
+        <span class="test-source">Letter &middot; 9 August 2010</span>
+      </div>
+      <div class="test-card">
+        <div>
+          <p class="test-body">"We are thrilled to welcome Vaishakh Surendran to the Lyfe Hotels family. His proven leadership and deep understanding of the hospitality sector will undoubtedly contribute to the continued success of our property."</p>
+          <div class="test-attr">
+            <span class="test-name">Dhiman Mazumdar</span>
+            <span class="test-role">Chief Operating Officer, Lyfe Hotels and Resorts, Bhubaneswar</span>
+          </div>
+        </div>
+        <span class="test-source">BOTT India &middot; 8 October 2024</span>
+      </div>
+      <div class="test-card">
+        <div>
+          <p class="test-body">"A seasoned hospitality professional known for his calm leadership and exceptional guest handling skills."</p>
+          <div class="test-attr">
+            <span class="test-name">AlphaTalks</span>
+            <span class="test-role">Alphadroid interview series, introducing Vaishakh Surendran as guest speaker</span>
+          </div>
+        </div>
+        <span class="test-source">YouTube &middot; 19 July 2024</span>
+      </div>
+      <div class="test-card">
+        <div>
+          <p class="test-body">"Renowned for his extensive experience in hotel and resort operations, particularly in front office management, and his leadership qualities, Mr. Surendran has consistently delivered top-tier results throughout his career."</p>
+          <div class="test-attr">
+            <span class="test-name">BOTT India</span>
+            <span class="test-role">Travel trade magazine, on his appointment as General Manager</span>
+          </div>
+        </div>
+        <span class="test-source">BOTT India &middot; 8 October 2024</span>
+      </div>
+    </div>
+    <div class="test-nav" id="rec-nav">
+      <button type="button" class="test-btn" id="rec-prev" aria-label="Previous recommendation" aria-controls="rec-track">&#8592;</button>
+      <span class="test-count" id="rec-count" aria-live="polite">1 of 7</span>
+      <button type="button" class="test-btn" id="rec-next" aria-label="Next recommendation" aria-controls="rec-track">&#8594;</button>
+    </div>
     </div>
   </div>
 </section>
+<script>(function(){var w=document.getElementById("rec-carousel"),t=document.getElementById("rec-track");if(!w||!t||!t.children.length)return;var n=t.children.length,c=document.getElementById("rec-count"),p=document.getElementById("rec-prev"),x=document.getElementById("rec-next");t.classList.add("is-carousel");t.setAttribute("tabindex","0");t.setAttribute("aria-label","Recommendations, scroll sideways or use the arrow buttons");for(var i=0;i<n;i++){t.children[i].setAttribute("role","group");t.children[i].setAttribute("aria-roledescription","slide");t.children[i].setAttribute("aria-label",(i+1)+" of "+n)}w.classList.add("is-ready");function idx(){return Math.max(0,Math.min(n-1,Math.round(t.scrollLeft/t.clientWidth)))}function upd(){var i=idx();c.textContent=(i+1)+" of "+n;p.disabled=i===0;x.disabled=i===n-1}function go(d){t.scrollTo({left:(idx()+d)*t.clientWidth})}p.addEventListener("click",function(){go(-1)});x.addEventListener("click",function(){go(1)});t.addEventListener("scroll",function(){window.requestAnimationFrame(upd)});t.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();go(1)}else if(e.key==="ArrowLeft"){e.preventDefault();go(-1)}});window.addEventListener("resize",upd);t.scrollLeft=0;upd();window.addEventListener("load",function(){t.scrollLeft=0;upd()});window.addEventListener("pageshow",function(){t.scrollLeft=0;upd()});})();</script>
+
 
 <section style="background:#fff;padding:80px 40px;border-top:1px solid rgba(13,27,42,.08)">
   <div style="max-width:1120px;margin:0 auto">
