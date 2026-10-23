@@ -695,7 +695,7 @@ footer.vfooter .vfooter-top{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;g
 footer.vfooter .vlogo{margin:0 0 22px!important;align-self:auto}
 footer.vfooter .vfooter-tag{font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-weight:300;font-size:1.05rem;color:#f5f4ef;margin:0 0 10px;line-height:1.4}
 footer.vfooter .vfooter-desc{font-size:.85rem;line-height:1.7;color:rgba(245,244,239,.72);margin:0;max-width:340px}
-footer.vfooter .vfooter-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#a57426;font-weight:600;margin:6px 0 18px}
+footer.vfooter .vfooter-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#b79051;font-weight:600;margin:6px 0 18px}
 footer.vfooter .vfooter-nav{display:flex!important;flex-direction:column;gap:12px!important;margin:0!important;position:static!important;background:none!important;height:auto!important;padding:0!important}
 footer.vfooter .vfooter-nav a,footer.vfooter .vfooter-contact a{font-family:"Public Sans",system-ui,sans-serif;font-size:.85rem!important;letter-spacing:0!important;text-transform:none!important;color:rgba(245,244,239,.78)!important;text-decoration:none;transition:color .2s}
 footer.vfooter .vfooter-nav a:hover,footer.vfooter .vfooter-contact a:hover,footer.vfooter a:focus-visible{color:#f5f4ef!important;text-decoration:underline;text-underline-offset:3px}
@@ -704,7 +704,7 @@ footer.vfooter .vfooter-cta{display:inline-block;border:1px solid rgba(165,116,3
 footer.vfooter .vfooter-cta:hover{background:#a57426;border-color:#a57426}
 footer.vfooter .vfooter-bottom{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding-top:24px}
 footer.vfooter .vfooter-bottom p{font-size:.74rem;line-height:1.6;color:rgba(245,244,239,.66);margin:0}
-footer.vfooter .vfooter-bottom a{color:rgba(165,116,38,.9);text-decoration:none}
+footer.vfooter .vfooter-bottom a{color:#b79051;text-decoration:underline;text-underline-offset:3px}
 footer.vfooter .vfooter-bottom a:hover{text-decoration:underline}
 @media(max-width:900px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr}footer.vfooter .vfooter-brand{grid-column:1/-1}}
 @media(max-width:600px){footer.vfooter .vfooter-nav{display:grid!important;grid-template-columns:1fr 1fr;column-gap:24px}footer.vfooter{padding:56px 20px 28px!important}footer.vfooter .vfooter-top{grid-template-columns:1fr;gap:40px}}
@@ -717,7 +717,7 @@ footer.vfooter .vfooter-contact li{font-size:.85rem;color:rgba(245,244,239,.6)}
 footer.vfooter .vfooter-social{margin-top:22px}
 footer.vfooter .vfooter-social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(245,244,239,.2);border-radius:50%;color:rgba(245,244,239,.8)}
 footer.vfooter .vfooter-social a:hover{border-color:#a57426;color:#a57426}
-footer.vfooter .vfooter-legal span{margin:0 10px;color:rgba(245,244,239,.3)}
+footer.vfooter .vfooter-legal span{margin:0 10px;color:rgba(245,244,239,.62)}
 footer.vfooter .vfooter-bottom{align-items:center}
 @media(max-width:1024px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr!important}footer.vfooter .vfooter-brand{grid-column:1/-1}}
 @media(max-width:600px){footer.vfooter .vfooter-top{grid-template-columns:1fr 1fr!important;gap:36px 24px!important}footer.vfooter .vfooter-col:last-child{grid-column:1/-1}footer.vfooter .vfooter-nav{display:flex!important;flex-direction:column}footer.vfooter .vfooter-bottom{flex-direction:column;align-items:flex-start}}
@@ -737,6 +737,35 @@ picture{display:contents}picture>source{display:none}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7QRDJ87V3"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}(function(){var g='denied';try{var v=JSON.parse(localStorage.getItem('veritas_consent'));if(v&&v.choice==='granted')g='granted';}catch(e){}gtag('consent','default',{analytics_storage:g,ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});if(/^(localhost|127\.0\.0\.1)$/.test(location.hostname))window['ga-disable-G-X7QRDJ87V3']=true;gtag('js',new Date());gtag('config','G-X7QRDJ87V3');})();</script>
 <script defer src="/consent.js"></script>
+<style id="a11y-contrast">/* contrast fixes from a measured audit, 23 Oct 2026: gold text #b79051 on dark and #845d1e on light (4.9:1 or better), muted text raised to 4.5:1 */
+div.hero-actions > a.btn-primary{color:#b79051!important}
+div.reality-text > p.section-label{color:#7e858c!important}
+div.card > span.card-num{color:#b79051!important}
+div.card > a.card-link{color:#b79051!important}
+div.engage-stage > div.stage-num{color:#b79051!important}
+div.why-item > span.wi-num{color:#845d1e!important}
+div.why-mandate > div.wm-label{color:#b79051!important}
+div.why-mandate > p.wm-tagline{color:#81888e!important}
+#diagnostic-section > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1){color:#845d1e!important}
+#diagnostic-section > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > p:nth-child(1){color:#845d1e!important}
+div.founder-text > p.section-label{color:#b79051!important}
+div.founder-text > a{color:#b79051!important}
+#founder > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > p:nth-child(2){color:#868d93!important}
+#founder > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > p:nth-child(2){color:#868d93!important}
+#founder > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > p:nth-child(2){color:#868d93!important}
+body > div:nth-child(12) > div:nth-child(3) > div:nth-child(1) > p:nth-child(1){color:#845d1e!important}
+body > section:nth-child(13) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1){color:#b79051!important}
+div.playbook-text > p.section-label{color:#b79051!important}
+div.pc-item > span.pc-num{color:#b79051!important}
+#playbook > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(7) > span:nth-child(2){color:#7e858c!important}
+div.playbook-gate > p.gate-sub{color:#898f94!important}
+div.gate-field > label{color:#8a9196!important}
+#gateFormWrap > form:nth-child(1) > div:nth-child(5) > label:nth-child(1) > span:nth-child(2) > a:nth-child(1){color:#b79051!important}
+#gateFormWrap > form:nth-child(1) > div:nth-child(5) > label:nth-child(1) > span:nth-child(2) > span:nth-child(2){color:#d3746b!important}
+form.gate-form > button.gate-submit{color:#0f0f0f!important}
+form.gate-form > p.gate-note{color:#898f95!important}
+#contactForm > div:nth-child(10) > label:nth-child(1) > span:nth-child(2) > a:nth-child(1){color:#845d1e!important}
+</style>
 </head>
 <body>
 
