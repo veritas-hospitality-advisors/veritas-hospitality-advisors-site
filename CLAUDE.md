@@ -21,6 +21,9 @@
 - Every `<img>` alt text must include a year (the real year where the page states one; undated site photos use 2026, the year the site was built). Decorative CSS background images are `aria-hidden`.
 - Image file names must not name a head of state or any unconfirmed claim. The two Kuwait images were renamed to `radisson-kuwait-delegation-team.jpg` and `radisson-kuwait-letterhead-autograph.jpg`.
 
+**Autograph caption (23 Oct 2026)**
+- On Viv's instruction the founder-page autograph image is captioned with the signatory's plain name (alt text and lightbox caption), no title. Vaishakh's own confirmation of the claim is not recorded here; details stay in the private engagement README. File names stay neutral.
+
 **Identifiers**
 - The GSTIN was removed from every footer on 23 Oct 2026 (it had stayed on the 15 `perspectives/` pages). The Udyam number is still in the footer pending the client's confirmation. Neither number belongs in this file or any other file in this public repository; they are in the private engagement README only.
 
