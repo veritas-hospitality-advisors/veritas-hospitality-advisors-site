@@ -26,6 +26,11 @@
 - `consent.js` calls `clarity('consent', false)` until the visitor accepts analytics, `clarity('consent', true)` on Accept, and `false` plus clearing the `_clck` / `_clsk` cookies on Decline or withdrawal. Check on the live site that Clarity sets no cookies before Accept.
 - Cookie banner (24 Oct 2026, owner's instruction): buttons are 'Essential only' and 'Accept all', equal prominence; text says cookies are used only for analytics and never for marketing or advertising, WITHOUT naming the analytics tools. `legal.html` uses 'Accept all', says the hosting provider is Cloudflare, and has a generic paragraph on other optional analytics tools (cookies `_clck`, `_clsk`). It still names Google Analytics in sections 2.2, 3, 5 and 6 (client-approved earlier). The client has not yet seen the new banner and legal wording: show them before treating it as approved. No footer 'Cookie settings' link was added (the footer is locked and baked into every page).
 
+**Performance notes (24 Oct 2026 PageSpeed, mobile)**
+- The founder-page recommendations carousel script no longer reads layout at load (initial counter set directly, scroll reset deferred to the next frame) to cut a ~115 ms forced reflow. Behaviour is meant to be identical; check next/prev and the '1 of 7' counter in a real browser after any change to it.
+- Legacy-JS and two extra requests come from Cloudflare itself: Web Analytics `beacon.min.js` (auto-injected) and Email Address Obfuscation `email-decode.min.js`. Turn off both in the Cloudflare dashboard if not wanted (Web Analytics is redundant with the site's own analytics; obfuscation hides the public email from crawlers and rewrites `mailto:` links, which conflicts with the canonical-email rule).
+- Fonts: 5 of the 7 woff weights are discovered after the HTML (critical path about 430 ms). Only the two most important are preloaded; adding more preloads is optional and low value.
+
 **Bing and IndexNow**
 - Bing Webmaster Tools is verified (meta tag and `BingSiteAuth.xml`), the sitemap is submitted and 27 URLs were submitted manually. The IndexNow key file is live; still click 'Get Started' in Bing to activate it. Check the Site Scan results and Search Performance after 48 hours.
 
