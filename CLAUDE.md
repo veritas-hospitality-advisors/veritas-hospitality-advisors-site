@@ -2,37 +2,61 @@
 *Session handoff file. Update after every working session.*
 *Last updated: 23 October 2026 | Branch: main*
 
-## UPDATE 23 Oct 2026 (site audit fixes; supersedes anything older that conflicts)
+## UPDATE 24 Oct 2026 (hosting moved to Cloudflare Pages; supersedes the GitHub Pages notes below)
 
-**Analytics and consent**
-- Google Analytics 4 (measurement ID `G-X7QRDJ87V3`, the client's own property) loads ONLY through `consent.js`, after the visitor clicks "Accept analytics" in the cookie banner. Every page and `404.html` has `<script defer src="/consent.js"></script>` in `<head>`. Never paste an inline gtag snippet into a page: that would set cookies before consent.
-- `consent.js` holds the banner, its styles (brand palette and fonts only) and the choice (`localStorage` key `veritas_consent`). It does not send test traffic from `localhost`. The privacy page (`legal.html`) has a "Cookie settings" link (`data-cookie-settings`) to change the choice. The Cookies and Third-party sections of `legal.html` describe GA4; keep them in step with any analytics change.
-- Not yet confirmed: a real GA4 hit in Realtime after accepting the banner on the live site; the client's approval of the banner and the cookie wording.
+**Hosting**
+- The live site `https://veritashospitalityadvisors.in` (and `www`) is served by **Cloudflare Pages**, project `veritas-hospitality-advisors`, in the CLIENT's own Cloudflare account (the same account that holds the domain's DNS). GitHub Pages is no longer the host; turn it off in the repo's Settings > Pages once happy. DNS MX, SPF, DKIM, DMARC and verification records were left untouched, and SSL/TLS mode is Full.
+- The project is a **direct upload, not connected to git**: pushing to GitHub does NOT update the live site. To publish, make a clean copy of the committed files (leave out `CLAUDE.md`, `build_playbook.py`, `research_notes/`, `reports/`, `_config.yml`, `CNAME`, `.claude/`, `.git`) and run `npx wrangler pages deploy <copy> --project-name veritas-hospitality-advisors --branch main` while `wrangler` is logged in to the client's account (`npx wrangler whoami` must show it). Delete any `.wrangler` cache folder in the copy first, or wrangler may use the wrong account. Then check `/perspectives/revpar` and `/sitemap.xml` on the live domain.
+- `_headers` (repo root, commit 94cc533) sets HSTS, COOP, X-Frame-Options SAMEORIGIN, nosniff, Referrer-Policy, one-year immutable caching for `/fonts/`, `/images/`, `/img/`, `*.jpg`, `*.webp`, and 1 hour for `*.js`. It replaces the old "security headers parked" note. No CSP or Trusted Types: the inline GA snippet and YouTube embed would break.
+- Because the repo no longer has to feed GitHub Pages, it can be made private if the owner wants (the older "repo MUST stay public" note applied only to GitHub Pages). Do not change visibility without asking.
+- Still to do: a Cloudflare redirect rule from `www` to the root (both currently serve the site; canonical tags already point to the root), and deleting a stray duplicate Pages project that was created by mistake in the agency's own Cloudflare account.
 
-**Site fixes now live (commits 00f874a, 29ec375, bfcbb12; later ones may still be unpushed)**
-- Branded `404.html`. Sitemap `lastmod` must be the real modified date of each page: update it, and the page's `article:modified_time`, whenever a page changes.
-- Heading rule: exactly one H1 per page, then H2 sections, no skipped levels. The 13 short `perspectives/` notes (H1 plus four paragraphs) each have ONE drafted H2 (Claude's wording, `.art-body h2` style); the client has not yet approved them.
-- Titles 60 characters or fewer, descriptions 160 or fewer. Form fields all have a label or `aria-label`. `legal.html` and the diagnostic template use no skipped heading levels.
-- `health-check.html` previously had no `</head>` or `<body>`; fixed (both style blocks in `<head>`, charset first).
-- Organization `sameAs` currently lists the founder's personal LinkedIn (a stopgap chosen by Viv). Replace it with a company LinkedIn page and/or Google Business Profile once they exist.
-- Resume PDF (`vaishakh-resume.pdf`) is generated from `vaishakh-resume.html` with Edge headless: `msedge --headless=new --disable-gpu --no-pdf-header-footer --print-to-pdf=vaishakh-resume.pdf <local URL of the page>`. The print-only rule `@media print{.resume-footer{margin-top:88mm!important;...}}` pushes the footer to the bottom of page 3 and is tuned to the current text; re-tune it if the resume text changes. The PDF must never contain `github.io` or a localhost link.
+**Commits**
+- Commits now carry `Co-Authored-By: AISearch Global | Sydney | Australia <hello@aisearch.global>` (owner's instruction, 24 Oct 2026). This replaces the old "never add Co-Authored-By" line in the attribution section below; it still never names Claude. Push only when the owner says so.
+- When a page changes, bump its `article:modified_time`, any `dateModified` in its schema, and its sitemap `lastmod` (done for 28 pages on 24 Oct, commit 581b652).
 
-**Images**
-- Every `<img>` alt text must include a year (the real year where the page states one; undated site photos use 2026, the year the site was built). Decorative CSS background images are `aria-hidden`.
-- Image file names must not name a head of state or any unconfirmed claim. The two Kuwait images were renamed to `radisson-kuwait-delegation-team.jpg` and `radisson-kuwait-letterhead-autograph.jpg`.
+**Accessibility fixes (24 Oct 2026, commits 2842cca, ebf5c27, 5255b31)**
+- Self-hosted fonts replace Google Fonts (the 'only this Google Fonts URL' rules below are superseded; the families are unchanged). Text contrast raised, in-text and footer links underlined, 24 px minimum tap targets on gallery dots, footer nav links, perspectives breadcrumb and back link, FAQ related links, home Read more and clients link. Home FAQ links and the legal contents list are underlined. `health-check.html` and `insights.html` muted and gold text darkened. A small `<style id="a11y-targets">` block before `</head>` carries the per-page overrides.
+- Locked: the logo lockup. Its 'HOSPITALITY ADVISORS' line measures about 4.2:1 contrast on navy and was left alone on purpose; changing it needs the owner's sign-off.
+- Known, not fixed: the dark-theme muted colour on `health-check.html` (`#5A6878`) is low contrast on dark backgrounds.
+- A full scan at 375 px on 24 Oct found no unnamed buttons, unlabelled fields, missing alt text, skipped headings or sideways scroll on any page. Re-run PageSpeed on the live `founder.html` to get fresh scores (the 23 Oct run predates most fixes).
 
-**Autograph caption (23 Oct 2026)**
-- On Viv's instruction the founder-page autograph image is captioned with the signatory's plain name (alt text and lightbox caption), no title. Vaishakh's own confirmation of the claim is not recorded here; details stay in the private engagement README. File names stay neutral.
+**Bing and IndexNow**
+- Bing Webmaster Tools is verified (meta tag and `BingSiteAuth.xml`), the sitemap is submitted and 27 URLs were submitted manually. The IndexNow key file is live; still click 'Get Started' in Bing to activate it. Check the Site Scan results and Search Performance after 48 hours.
 
-**Identifiers**
-- The GSTIN was removed from every footer on 23 Oct 2026 (it had stayed on the 15 `perspectives/` pages). The Udyam number is still in the footer pending the client's confirmation. Neither number belongs in this file or any other file in this public repository; they are in the private engagement README only.
+## UPDATE 23 Oct 2026 (final state of the day; supersedes anything older that conflicts)
 
-**Still open (not done)**
-- WebP versions of the 13 JPG images; optional `max-snippet` robots meta and SpeakableSpecification; resume page breadcrumb and nav (print-style page, left as is).
-- Search Console and Bing Webmaster verification, IndexNow, Google Business Profile, a company LinkedIn page, directory listings (need the client's logins or accounts).
-- Security headers (HSTS, CSP and others): GitHub Pages cannot set them; would need a CDN in front.
-- Core Web Vitals: run PageSpeed Insights by hand.
-- Client approvals: cookie wording and banner; the 13 drafted H2s; Udyam in the footer.
+**Analytics and consent (Google Consent Mode pattern)**
+- The Google tag (GA4 `G-X7QRDJ87V3`, the client's own property) is inline in `<head>` on all 28 pages (the 27 sitemap pages plus `404.html`) in a consent-DENIED state: `gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'})` runs before `gtag('config')`. A stored "granted" choice (`localStorage` key `veritas_consent`) sets analytics_storage to granted on load. `consent.js` shows the cookie banner; Accept sends `gtag('consent','update',{analytics_storage:'granted'})`; Decline or withdrawal sets it back to denied and clears the `_ga` cookies. Local previews (localhost, 127.0.0.1) send nothing.
+- Robots meta (done, commit 76be16d): the 26 indexable pages carry `index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1`; `legal.html` and `404.html` keep `noindex,follow`. Any new indexable page needs the full tag, right after its description line.
+- Keep the inline snippet identical on every page. Never add a second tag. Never set any `ad_*` signal to granted.
+- `legal.html` describes this: Privacy sections 2.2, 3, 3.1 to 3.3, Cookies (5, with the `_ga` and `_ga_X7QRDJ87V3` cookies, 2 years) and Third-party services (6), plus a "Cookie settings" link (`data-cookie-settings`) that re-opens the banner. Keep these in step with any analytics change. Section 3.2 says analytics data is retained "for the period configured in our Google Analytics account": replace it with the real value once the GA4 Event data retention setting is confirmed.
+- The client approved the cookie wording on condition it is industry standard and covered in both the legal and privacy sections (done). Still unconfirmed: one deliberate Accept hit in GA4 Realtime.
+- Public email is `vaishakh@veritashospitalityadvisors.in` everywhere (canonical rule below in the 22 Oct block).
+
+**Live site state (main = 11 commits; history was squashed on 23 Oct to drop sensitive text)**
+- Branded `404.html`. Sitemap `lastmod` must be the real modified date of each page; update it and the page's `article:modified_time` whenever a page changes.
+- Headings: exactly one H1 per page, then H2 sections, no skipped levels. The 13 short `perspectives/` notes each have ONE drafted H2 (Claude's wording; the client has not formally approved it). Titles 60 characters or fewer, descriptions 160 or fewer. Every form field has a label or `aria-label`.
+- All 15 `perspectives/` pages show published 2 October 2026 consistently (visible line, schema `datePublished`, `article:published_time`). Modified dates are the real change dates. Never invent or stagger dates.
+- `health-check.html` head fixed. Organization `sameAs` currently lists the founder's personal LinkedIn (a stopgap chosen by the owner): replace it with a company LinkedIn page and/or Google Business Profile when they exist.
+- Resume PDF (`vaishakh-resume.pdf`) is generated from `vaishakh-resume.html` with Edge headless: `msedge --headless=new --disable-gpu --no-pdf-header-footer --print-to-pdf=vaishakh-resume.pdf <local URL of the page>`. The print-only rule `@media print{.resume-footer{margin-top:88mm!important;...}}` pushes the footer to the bottom of page 3; re-tune it if the resume text changes. The PDF must never contain `github.io` or a localhost link.
+
+**Images and founder page**
+- Every `<img>` alt text includes a year (the real year where the page states one; undated site photos use 2026, the year the site was built). Decorative CSS background images are `aria-hidden`. Image file names must not name a person or an unconfirmed claim.
+- WebP: 12 `.webp` files are served first through `<picture><source srcset="x.webp" type="image/webp"><img src="x.jpg"></picture>` on `founder.html`, `index.html` and `perspectives/sustainability-hotel-india.html`; the JPG stays as fallback. Each of those pages needs the CSS `picture{display:contents}picture>source{display:none}` or the layout shifts. Convert new images the same way (Pillow, quality 82).
+- `lightbox.js` (founder page only): images inside `[data-lightbox]` enlarge on click (arrows, Esc, click-outside, keyboard); images inside `[data-lightbox-group]` open together side by side (the commendations card: autograph and Homeland Security letter). Browsers can cache `lightbox.js` and `consent.js` for about 10 minutes after a deploy; test with a hard reload.
+- The commendations card names only the US Secret Service and the US Department of Homeland Security. The autograph caption and alt text name the signatory by plain name with no title, on the owner's instruction (the client knows). Image file names stay neutral.
+- The cancelled GSTIN is removed from every page. The Udyam number is still in the footer pending the client's confirmation. Neither number belongs in this repository's documents.
+
+**Repo and hosting rules**
+- The repo MUST stay public: GitHub Pages is off for a private repo on this plan (making it private on 23 Oct took the site down; Pages had to be re-enabled at Settings > Pages: branch main, folder / (root), custom domain `veritashospitalityadvisors.in`, Enforce HTTPS).
+- Old pull-request refs #1 to #3 remain on GitHub and only GitHub Support can purge them.
+- Commits: use the configured identity; NEVER add a Co-Authored-By line; commit and push only when the owner asks. Do not run branch-deleting, history-rewriting or `gc` commands without the owner's explicit permission.
+
+**Still open**
+- Bing Webmaster Tools (import from Search Console), PageSpeed Insights (manual), a company LinkedIn page then `sameAs`, the GA4 retention value and an Accept hit, Google Business Profile, Search Console follow-up checks.
+- Parked or optional: security headers (GitHub Pages cannot set them), resume page nav and breadcrumb, WebP for the three home-page CSS background images.
+- Client confirmations still open: the drafted H2 headings, the Udyam number in the footer.
 
 ---
 
