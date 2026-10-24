@@ -181,7 +181,7 @@ NRevPAR (Net Revenue Per Available Room) is RevPAR after deducting the cost of d
 > https://veritashospitalityadvisors.in/perspectives/events.html — MICE and wedding demand: contribution margin analysis
 > https://veritashospitalityadvisors.in/perspectives/infrastructure.html — Tourism infrastructure timing and hotel owner planning
 > https://veritashospitalityadvisors.in/perspectives/pilgrimage.html — Pilgrimage demand segments and rate strategy
-> https://veritashospitalityadvisors.in/perspectives/pipeline.html — India hotel pipeline: what 144,000 rooms means for existing owners
+> https://veritashospitalityadvisors.in/perspectives/pipeline.html — India hotel pipeline: what competitor supply figures actually mean for existing owners
 > https://veritashospitalityadvisors.in/perspectives/source-markets.html — Source market analysis for independent hotels
 
 ## Perspectives — full index
@@ -195,7 +195,7 @@ NRevPAR (Net Revenue Per Available Room) is RevPAR after deducting the cost of d
 - [What your OTA contract is actually costing you — and why your P&L may not show it](https://veritashospitalityadvisors.in/perspectives/ota-cost.html)
 - [The seven numbers every hotel owner and GM should review each month](https://veritashospitalityadvisors.in/perspectives/owner-report.html)
 - [Pilgrimage demand calls for an operating plan, not only a higher tariff](https://veritashospitalityadvisors.in/perspectives/pilgrimage.html)
-- [What a 144,000-room pipeline actually tells a hotel owner](https://veritashospitalityadvisors.in/perspectives/pipeline.html)
+- [What a competitor pipeline actually tells a hotel owner](https://veritashospitalityadvisors.in/perspectives/pipeline.html)
 - [Five-star rates in the headlines, a different decision at your desk](https://veritashospitalityadvisors.in/perspectives/pricing.html)
 - [RevPAR is not the metric your hotel needs. Here is what to track instead.](https://veritashospitalityadvisors.in/perspectives/revpar.html)
 - [When inbound travel softens, know which guests you actually rely on](https://veritashospitalityadvisors.in/perspectives/source-markets.html)
