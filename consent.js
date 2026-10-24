@@ -1,4 +1,4 @@
-/* Veritas Hospitality Advisors: cookie consent for Google Analytics (GA4).
+/* Veritas Hospitality Advisors: cookie consent for analytics (Google Analytics and Clarity). Buttons: Essential only / Accept all, same prominence.
    The Google tag is in every page's <head> in a consent-denied state (Google Consent Mode). Clicking "Accept" switches analytics_storage to granted.
    Declining, or not choosing, sets no analytics cookies.
    The choice is stored in this browser (localStorage key "veritas_consent") and can be changed from the Privacy Policy page. */
@@ -59,7 +59,7 @@
       '#veritas-consent .vc-btns{display:flex;gap:12px;flex-wrap:wrap}' +
       '#veritas-consent button{font-family:inherit;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:11px 22px;cursor:pointer;border-radius:0;min-width:120px;' +
       'border:1px solid #F5F4EF;background:transparent;color:#F5F4EF}' +
-      '#veritas-consent button.vc-accept{background:#F5F4EF;color:#0D1B2A}' +
+      '#veritas-consent button:hover{background:#F5F4EF;color:#0D1B2A}' +
       '#veritas-consent button:hover,#veritas-consent button:focus-visible{outline:2px solid #A57426;outline-offset:2px}' +
       '@media print{#veritas-consent{display:none}}';
     document.head.appendChild(st);
@@ -86,9 +86,9 @@
     d.setAttribute('role', 'dialog');
     d.setAttribute('aria-label', 'Cookie choice');
     d.innerHTML =
-      '<div class="vc-inner"><p>We use Google Analytics cookies to understand how this website is used. They are optional, and we do not use advertising cookies. ' +
+      '<div class="vc-inner"><p>We use cookies only for analytics, to understand how this website is used. They are optional, and we do not use marketing or advertising cookies. ' +
       'You can change your choice at any time. <a href="/legal.html#cookies">Privacy Policy</a></p>' +
-      '<div class="vc-btns"><button type="button" class="vc-decline">Decline</button><button type="button" class="vc-accept">Accept analytics</button></div></div>';
+      '<div class="vc-btns"><button type="button" class="vc-decline">Essential only</button><button type="button" class="vc-accept">Accept all</button></div></div>';
     document.body.appendChild(d);
     d.querySelector('.vc-accept').addEventListener('click', function () { choose('granted'); });
     d.querySelector('.vc-decline').addEventListener('click', function () { choose('denied'); });
