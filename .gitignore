@@ -1,2 +1,4 @@
 # Internal / sensitive working files — never commit
 local-private/
+_deploy-clean/
+.wrangler/
