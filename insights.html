@@ -350,7 +350,7 @@ a.art-card > span.art-card-link{color:#845d1e!important}
 <div class="jump-band"><div class="jump-inner">
   <label for="article-jump" style="display:block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#a57426;font-weight:600;margin-bottom:10px">Jump to an article</label>
   <div style="position:relative;max-width:520px">
-    <select id="article-jump" onchange="if(this.value)window.location.href=this.value;this.value=''"
+    <select id="article-jump"
       style="width:100%;appearance:none;-webkit-appearance:none;padding:10px 36px 10px 14px;border:1px solid rgba(245,244,239,.22);border-radius:2px;background:#222D39;color:#f5f4ef;font-family:'Public Sans',system-ui,sans-serif;font-size:.82rem;cursor:pointer;outline:none">
       <option value="">— Select article —</option>
       <optgroup label="Industry Analysis">
@@ -381,9 +381,9 @@ a.art-card > span.art-card-link{color:#845d1e!important}
 </div></div>
 
 <div class="tab-bar" id="tabBar">
-  <button class="tab-btn active" onclick="switchTab('industry')" id="tab-industry">Industry Analysis</button>
-  <button class="tab-btn" onclick="switchTab('essays')" id="tab-essays">Owner Essays</button>
-  <button class="tab-btn" onclick="switchTab('archive')" id="tab-archive">Archive</button>
+  <button class="tab-btn active" data-on-click="switchTab" data-arg='"industry"' id="tab-industry">Industry Analysis</button>
+  <button class="tab-btn" data-on-click="switchTab" data-arg='"essays"' id="tab-essays">Owner Essays</button>
+  <button class="tab-btn" data-on-click="switchTab" data-arg='"archive"' id="tab-archive">Archive</button>
 </div>
 
 <div class="tab-panel active" id="panel-industry">
@@ -575,5 +575,7 @@ const h = location.hash.replace('#','');
 if(h && ['industry','essays','archive'].includes(h)) switchTab(h);
 </script>
 <script>document.addEventListener("DOMContentLoaded",function(){var b=document.querySelector(".nav-toggle");if(!b)return;var n=b.closest("nav");b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu")});n.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Open menu")})})});</script>
+<script>(function(){function w(ev,attr){document.querySelectorAll('['+attr+']').forEach(function(el){el.addEventListener(ev,function(e){var f=window[el.getAttribute(attr)];if(typeof f!=='function')return;var a=el.getAttribute('data-arg');if(el.hasAttribute('data-pass-event'))f(e);else if(a!==null)f(JSON.parse(a));else f();});});}w('click','data-on-click');w('submit','data-on-submit');})();</script>
+<script>(function(){var s=document.getElementById('article-jump');if(s)s.addEventListener('change',function(){if(this.value)window.location.href=this.value;this.value='';});})();</script>
 </body>
 </html>

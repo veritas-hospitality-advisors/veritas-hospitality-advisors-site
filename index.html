@@ -1077,7 +1077,7 @@ form.gate-form > p.gate-note{color:#898f95!important}
       <h3 class="gate-heading">Download the Playbook</h3>
       <p class="gate-sub">Sent immediately. No marketing emails. No follow-up unless you ask.</p>
       <div id="gateFormWrap">
-        <form class="gate-form" onsubmit="submitGate(event)">
+        <form class="gate-form" data-on-submit="submitGate" data-pass-event>
           <div class="gate-field">
             <label for="gate-name">Your name</label>
             <input type="text" id="gate-name" name="name" placeholder="Ravi Sharma" required autocomplete="name">
@@ -1283,7 +1283,7 @@ function showResults(score){
       <a href="#contact" class="btn-cta">Request a confidential discussion</a>
       <span class="res-contact">vaishakh@veritashospitalityadvisors.in · +91 90722 33008</span>
     </div>
-    <button class="restart-link" onclick="restartDiag()">Restart diagnostic</button>
+    <button class="restart-link" data-on-click="restartDiag">Restart diagnostic</button>
   `;
 
   document.getElementById('diag-results').style.display='block';
@@ -1321,9 +1321,9 @@ window.addEventListener('scroll',()=>{
   drawer.setAttribute('role','dialog');
   drawer.setAttribute('aria-modal','true');
   drawer.innerHTML=`
-    <div class="blog-drawer-overlay" onclick="closePost()"></div>
+    <div class="blog-drawer-overlay" data-on-click="closePost"></div>
     <div class="blog-drawer-panel">
-      <button class="drawer-close" onclick="closePost()" aria-label="Close">✕</button>
+      <button class="drawer-close" data-on-click="closePost" aria-label="Close">✕</button>
       <p class="drawer-tag" id="drawerTag"></p>
       <p class="drawer-title" id="drawerTitle" role="heading" aria-level="2"></p>
       <div class="drawer-body" id="drawerBody"></div>
@@ -1424,5 +1424,6 @@ function submitContact(e){
 }
 </script>
 <script>document.addEventListener("DOMContentLoaded",function(){var b=document.querySelector(".nav-toggle");if(!b)return;var n=b.closest("nav");b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu")});n.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Open menu")})})});</script>
+<script>(function(){function w(ev,attr){document.querySelectorAll('['+attr+']').forEach(function(el){el.addEventListener(ev,function(e){var f=window[el.getAttribute(attr)];if(typeof f!=='function')return;var a=el.getAttribute('data-arg');if(el.hasAttribute('data-pass-event'))f(e);else if(a!==null)f(JSON.parse(a));else f();});});}w('click','data-on-click');w('submit','data-on-submit');})();</script>
 </body>
 </html>

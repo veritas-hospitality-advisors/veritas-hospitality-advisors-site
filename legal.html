@@ -242,7 +242,7 @@ button.toc-toggle > span.toc-arrow{color:#8a9096!important}
       Compliant with the Information Technology Act, 2000 and the Digital Personal Data Protection Act, 2023 (India)
     </p>
     <div class="toc">
-      <button class="toc-toggle" aria-expanded="false" aria-controls="toc-body" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');document.getElementById('toc-body').classList.toggle('open')">
+      <button class="toc-toggle" aria-expanded="false" aria-controls="toc-body">
         <h2>Contents</h2>
         <span class="toc-arrow">&#9660;</span>
       </button>
@@ -436,5 +436,6 @@ button.toc-toggle > span.toc-arrow{color:#8a9096!important}
 </footer>
 
 <script>document.addEventListener("DOMContentLoaded",function(){var b=document.querySelector(".nav-toggle");if(!b)return;var n=b.closest("nav");b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu")});n.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Open menu")})})});</script>
+<script>(function(){var b=document.querySelector('.toc-toggle');if(b)b.addEventListener('click',function(){this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');document.getElementById('toc-body').classList.toggle('open');});})();</script>
 </body>
 </html>

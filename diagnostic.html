@@ -463,7 +463,7 @@ body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(5) 
         <li>Where your oversight has gaps and what they cost you</li>
         <li>Specific questions to raise with your management team</li>
       </ul>
-      <a class="dtool-cta" href="#diagnostic" onclick="openDiagTool(event)">Start Diagnostic &rarr;</a>
+      <a class="dtool-cta" href="#diagnostic" data-on-click="openDiagTool" data-pass-event>Start Diagnostic &rarr;</a>
     </div>
 
     <div class="dtool-card dtool-light">
@@ -489,11 +489,11 @@ body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(5) 
   <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
   <p class="quiz-progress-text" id="quizProgressText">0 of 15 answered</p>
   <div class="quiz-steps" id="quizSteps">
-    <button class="quiz-step current" id="step-s1" onclick="showSection('s1')" type="button"><span class="step-circle"><span>1</span></span><span class="step-label">Owner Reporting</span><span class="quiz-step-line"></span></button>
-    <button class="quiz-step" id="step-s2" onclick="showSection('s2')" type="button"><span class="step-circle"><span>2</span></span><span class="step-label">Commercial Performance</span><span class="quiz-step-line"></span></button>
-    <button class="quiz-step" id="step-s3" onclick="showSection('s3')" type="button"><span class="step-circle"><span>3</span></span><span class="step-label">Operational Governance</span><span class="quiz-step-line"></span></button>
-    <button class="quiz-step" id="step-s4" onclick="showSection('s4')" type="button"><span class="step-circle"><span>4</span></span><span class="step-label">Owner Position</span><span class="quiz-step-line"></span></button>
-    <button class="quiz-step" id="step-results" onclick="jumpToResultsIfReady()" type="button"><span class="step-circle"><span>5</span></span><span class="step-label">Your Result</span></button>
+    <button class="quiz-step current" id="step-s1" data-on-click="showSection" data-arg='"s1"' type="button"><span class="step-circle"><span>1</span></span><span class="step-label">Owner Reporting</span><span class="quiz-step-line"></span></button>
+    <button class="quiz-step" id="step-s2" data-on-click="showSection" data-arg='"s2"' type="button"><span class="step-circle"><span>2</span></span><span class="step-label">Commercial Performance</span><span class="quiz-step-line"></span></button>
+    <button class="quiz-step" id="step-s3" data-on-click="showSection" data-arg='"s3"' type="button"><span class="step-circle"><span>3</span></span><span class="step-label">Operational Governance</span><span class="quiz-step-line"></span></button>
+    <button class="quiz-step" id="step-s4" data-on-click="showSection" data-arg='"s4"' type="button"><span class="step-circle"><span>4</span></span><span class="step-label">Owner Position</span><span class="quiz-step-line"></span></button>
+    <button class="quiz-step" id="step-results" data-on-click="jumpToResultsIfReady" type="button"><span class="step-circle"><span>5</span></span><span class="step-label">Your Result</span></button>
   </div>
 </div>
 
@@ -541,8 +541,8 @@ body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(5) 
   </div>
   </form>
   <div class="section-footer">
-    <button class="btn-skip" onclick="showSection('s2')">Skip to Commercial Performance</button>
-    <button class="btn-next" onclick="showSection('s2')">Next: Commercial Performance &rarr;</button>
+    <button class="btn-skip" data-on-click="showSection" data-arg='"s2"'>Skip to Commercial Performance</button>
+    <button class="btn-next" data-on-click="showSection" data-arg='"s2"'>Next: Commercial Performance &rarr;</button>
   </div>
 </div>
 
@@ -593,8 +593,8 @@ body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(5) 
   </div>
   </form>
   <div class="section-footer">
-    <button class="btn-skip" onclick="showSection('s3')">Skip to Operational Governance</button>
-    <button class="btn-next" onclick="showSection('s3')">Next: Operational Governance &rarr;</button>
+    <button class="btn-skip" data-on-click="showSection" data-arg='"s3"'>Skip to Operational Governance</button>
+    <button class="btn-next" data-on-click="showSection" data-arg='"s3"'>Next: Operational Governance &rarr;</button>
   </div>
 </div>
 
@@ -635,8 +635,8 @@ body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(5) 
   </div>
   </form>
   <div class="section-footer">
-    <button class="btn-skip" onclick="showSection('s4')">Skip to Owner Position</button>
-    <button class="btn-next" onclick="showSection('s4')">Next: Owner Position &rarr;</button>
+    <button class="btn-skip" data-on-click="showSection" data-arg='"s4"'>Skip to Owner Position</button>
+    <button class="btn-next" data-on-click="showSection" data-arg='"s4"'>Next: Owner Position &rarr;</button>
   </div>
 </div>
 
@@ -696,8 +696,8 @@ body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(5) 
   </div>
   </form>
   <div class="section-footer">
-    <button class="btn-skip" onclick="calcResults()">Skip to results</button>
-    <button class="btn-next" onclick="calcResults()">See my results &rarr;</button>
+    <button class="btn-skip" data-on-click="calcResults">Skip to results</button>
+    <button class="btn-next" data-on-click="calcResults">See my results &rarr;</button>
   </div>
 </div>
 </div><!-- /diag-section-wrap -->
@@ -718,7 +718,7 @@ body > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(5) 
     <p>We&rsquo;ll send a copy to your inbox. Vaishakh will receive a copy and can follow up personally if you&rsquo;d like to discuss.</p>
     <div class="email-row">
       <input type="email" id="emailInput" aria-label="Your email address" placeholder="your@email.com">
-      <button class="btn-email" onclick="emailResults()">Send results &rarr;</button>
+      <button class="btn-email" data-on-click="emailResults">Send results &rarr;</button>
     </div>
     <p class="email-sent" id="emailSent">&#10003; Sent. Vaishakh will be in touch if you&rsquo;d like to discuss.</p>
   </div>
@@ -962,5 +962,6 @@ function openDiagTool(e) {
 updateStepper();
 </script>
 <script>document.addEventListener("DOMContentLoaded",function(){var b=document.querySelector(".nav-toggle");if(!b)return;var n=b.closest("nav");b.addEventListener("click",function(){var o=n.classList.toggle("nav-open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close menu":"Open menu")});n.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("nav-open");b.setAttribute("aria-expanded","false");b.setAttribute("aria-label","Open menu")})})});</script>
+<script>(function(){function w(ev,attr){document.querySelectorAll('['+attr+']').forEach(function(el){el.addEventListener(ev,function(e){var f=window[el.getAttribute(attr)];if(typeof f!=='function')return;var a=el.getAttribute('data-arg');if(el.hasAttribute('data-pass-event'))f(e);else if(a!==null)f(JSON.parse(a));else f();});});}w('click','data-on-click');w('submit','data-on-submit');})();</script>
 </body>
 </html>
