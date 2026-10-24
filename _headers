@@ -20,5 +20,8 @@
 /*.webp
   Cache-Control: public, max-age=31536000, immutable
 
-/*.js
-  Cache-Control: public, max-age=3600
+/consent.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/lightbox.js
+  Cache-Control: public, max-age=31536000, immutable

@@ -31,6 +31,10 @@
 - Legacy-JS and two extra requests come from Cloudflare itself: Web Analytics `beacon.min.js` (auto-injected) and Email Address Obfuscation `email-decode.min.js`. Turn off both in the Cloudflare dashboard if not wanted (Web Analytics is redundant with the site's own analytics; obfuscation hides the public email from crawlers and rewrites `mailto:` links, which conflicts with the canonical-email rule).
 - Fonts: 5 of the 7 woff weights are discovered after the HTML (critical path about 430 ms). Only the two most important are preloaded; adding more preloads is optional and low value.
 
+**Local script caching (24 Oct 2026)**
+- `consent.js` and `lightbox.js` are cached for one year (`_headers`, immutable) and are referenced as `/consent.js?v=20261024` and `/lightbox.js?v=20261024`. When you change either file, bump the `?v=` value on every page that references it (29 pages for consent.js, `founder.html` for lightbox.js) before deploying; otherwise visitors keep the old copy. No cache purge is needed when the version changes.
+- Remaining PageSpeed items that are Cloudflare's own (not site code): the Web Analytics `beacon.min.js` (legacy JS, `/cdn-cgi/rum` request, short cache) and Email Address Obfuscation `email-decode.min.js` (render-blocking, short cache). Switch both off in the Cloudflare dashboard. Google's gtag.js (about 180 KiB, 'unused JavaScript') loads on every page by design (Consent Mode); loading it only after Accept is possible but changes what is measured.
+
 **Bing and IndexNow**
 - Bing Webmaster Tools is verified (meta tag and `BingSiteAuth.xml`), the sitemap is submitted and 27 URLs were submitted manually. The IndexNow key file is live; still click 'Get Started' in Bing to activate it. Check the Site Scan results and Search Performance after 48 hours.
 
