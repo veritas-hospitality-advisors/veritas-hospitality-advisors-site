@@ -6,6 +6,7 @@
   'use strict';
   var GA_ID = 'G-X7QRDJ87V3';
   var KEY = 'veritas_consent';
+  if (window.clarity && !(function(){try{var v=JSON.parse(localStorage.getItem(KEY));return v&&v.choice==='granted';}catch(e){return false;}})()) window.clarity('consent', false); // Clarity runs cookieless until analytics are accepted
   var isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
 
   function read() {
@@ -19,6 +20,7 @@
   }
 
   function loadGA() {
+    if (window.clarity) window.clarity('consent', true);
     if (window.__veritasGALoaded) return;
     window.__veritasGALoaded = true;
     if (isLocal) { window.__veritasGAWouldLoad = true; return; } // never send test traffic from a local preview
@@ -29,10 +31,11 @@
   }
 
   function clearGACookies() {
+    if (window.clarity) window.clarity('consent', false);
     window['ga-disable-' + GA_ID] = true;
     window.__veritasGALoaded = false;
     if (window.gtag) { window.gtag('consent', 'update', { analytics_storage: 'denied' }); }
-    var names = ['_ga', '_ga_' + GA_ID.replace('G-', ''), '_gid', '_gat'];
+    var names = ['_ga', '_ga_' + GA_ID.replace('G-', ''), '_gid', '_gat', '_clck', '_clsk', 'CLID', 'ANONCHK', 'MR', 'MUID', 'SM'];
     var host = location.hostname.split('.');
     var domains = [location.hostname, '.' + location.hostname];
     if (host.length > 2) domains.push('.' + host.slice(-2).join('.'));

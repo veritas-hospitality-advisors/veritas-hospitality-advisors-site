@@ -21,6 +21,11 @@
 - Known, not fixed: the dark-theme muted colour on `health-check.html` (`#5A6878`) is low contrast on dark backgrounds.
 - A full scan at 375 px on 24 Oct found no unnamed buttons, unlabelled fields, missing alt text, skipped headings or sideways scroll on any page. Re-run PageSpeed on the live `founder.html` to get fresh scores (the 23 Oct run predates most fixes).
 
+**Microsoft Clarity (added 24 Oct 2026, owner's instruction)**
+- The Clarity tag (project id `z2h62oe5uo`, set up from Bing Webmaster Tools) is in `<head>` on all 29 pages, just before the `consent.js` line, exactly as Bing supplied it. Keep it identical on every page; never add a second copy.
+- `consent.js` calls `clarity('consent', false)` until the visitor accepts analytics, `clarity('consent', true)` on Accept, and `false` plus clearing the `_clck` / `_clsk` cookies on Decline or withdrawal. Check on the live site that Clarity sets no cookies before Accept.
+- NOT yet done: `legal.html` (Privacy sections 2.2, 3, 5 and 6) and the cookie banner text still describe Google Analytics only. They need a Clarity line (session recordings and heatmaps, cookies `_clck` and `_clsk`, Microsoft as the provider) and the client's approval of the new wording. Until then the site's policy text is out of step with the tag.
+
 **Bing and IndexNow**
 - Bing Webmaster Tools is verified (meta tag and `BingSiteAuth.xml`), the sitemap is submitted and 27 URLs were submitted manually. The IndexNow key file is live; still click 'Get Started' in Bing to activate it. Check the Site Scan results and Search Performance after 48 hours.
 
