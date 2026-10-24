@@ -1,6 +1,6 @@
 ﻿# CLAUDE.md — Veritas Hospitality Advisors Site
 *Session handoff file. Update after every working session.*
-*Last updated: 23 October 2026 | Branch: main*
+*Last updated: 24 October 2026 (end of session) | Branch: main*
 
 ## UPDATE 24 Oct 2026 (hosting moved to Cloudflare Pages; supersedes the GitHub Pages notes below)
 
@@ -41,6 +41,13 @@
 **Local script caching (24 Oct 2026)**
 - `consent.js` and `lightbox.js` are cached for one year (`_headers`, immutable) and are referenced as `/consent.js?v=20261024` and `/lightbox.js?v=20261024`. When you change either file, bump the `?v=` value on every page that references it (29 pages for consent.js, `founder.html` for lightbox.js) before deploying; otherwise visitors keep the old copy. No cache purge is needed when the version changes.
 - Remaining PageSpeed items that are Cloudflare's own (not site code): the Web Analytics `beacon.min.js` (legacy JS, `/cdn-cgi/rum` request, short cache) and Email Address Obfuscation `email-decode.min.js` (render-blocking, short cache). Switch both off in the Cloudflare dashboard. Google's gtag.js (about 180 KiB, 'unused JavaScript') loads on every page by design (Consent Mode); loading it only after Accept is possible but changes what is measured.
+
+**End-of-session state, 24 Oct 2026**
+- Live and pushed up to `4ab4f59` (GitHub main = live Cloudflare site). Order of the day's commits: fonts and accessibility batch (`2842cca`, `ebf5c27`), `_headers` (`94cc533`), dates (`581b652`), tap targets and contrast (`5255b31`), CLAUDE.md (`f3bcbc1`), Clarity (`afb37b8`, `ad5d1cf`), cookie banner (`f4027b9`), carousel reflow (`5d1c7f9`), script caching (`411557a`), report-only CSP (`2f1c9a3`), inline handlers converted (`e3e04c5`), home band readability (`bf4b5da`), article dates (`4ab4f59`). Later commits to this CLAUDE.md may be local only: check `git status`.
+- PageSpeed on live `/perspectives/revpar`: mobile Performance 94, Accessibility 96, Best Practices 100, SEO 100; desktop 100 / 96 / 100 / 100. Remaining insights are Cloudflare's own scripts (Web Analytics beacon, Email Obfuscation) and Google's gtag.js.
+- Open, owner side: switch off Cloudflare Web Analytics and Email Address Obfuscation; check the live console for CSP 'Report Only' messages, then change `HEADER_NAME` in `build_csp.py` to `Content-Security-Policy`, regenerate, redeploy; show the client the new cookie banner and legal wording; Bing 'Submit' and 'Check live' on the robots.txt tester and the Site Scan results; turn off GitHub Pages; delete the duplicate Pages project in the agency's own Cloudflare account; company LinkedIn / Google Business Profile / firm Wikidata item.
+- Open, content (needs Vaishakh's approval for his bylined pages): the 13 short Perspectives notes (about 460 to 590 words, one H2, no direct answer in the opening), question-style titles and URLs, FAQ blocks and schema on the service pages. Source: the AirOps AEO vs SEO article review, 24 Oct 2026.
+- After any inline-script change run `build_csp.py`; after any `consent.js` or `lightbox.js` change bump the `?v=` on every page; deploy with `wrangler pages deploy` from a clean copy (see the Hosting block above).
 
 **Bing and IndexNow**
 - Bing Webmaster Tools is verified (meta tag and `BingSiteAuth.xml`), the sitemap is submitted and 27 URLs were submitted manually. The IndexNow key file is live; still click 'Get Started' in Bing to activate it. Check the Site Scan results and Search Performance after 48 hours.
