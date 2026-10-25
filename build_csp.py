@@ -35,6 +35,7 @@ HOSTS = {
         "https://*.google-analytics.com",
         "https://*.googletagmanager.com",
         "https://*.clarity.ms",
+        "https://c.bing.com",
         "https://assets.simplotel.com",
         "https://*.cdninstagram.com",
         "https://*.fbcdn.net",
